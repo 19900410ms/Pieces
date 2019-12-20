@@ -1,9 +1,10 @@
 Hello World!!
 
-<%= link_to "user", "user_path" %>
+<%= link_to "マイページ", "user_path" %>
 <%= link_to "show", "contribution_path"%>
-<%= link_to "new", "new_contribution_path" %>
-<%= link_to "signup", "/signup/signup_1" %>
+<%= link_to "投稿する", "new_contribution_path" %>
+<%= link_to "新規登録", "/signup/signup_1" %>
+<%= link_to "ログイン", new_user_session_path %>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 
 
