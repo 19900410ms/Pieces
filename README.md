@@ -41,11 +41,10 @@ Things you may want to cover:
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|gender|string|null: false|
-|hobby|string|null: false|
-|sports|string|null: false|
-|study_fields|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|gender|string||
+|sports|string||
+|study_fields|string||
+|user_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -58,7 +57,7 @@ Things you may want to cover:
 |title|string|null: false|
 |text|text|null: false|
 |image|string||
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|foreign_key: true|
 
 ### Association
 - belongs_to :user
