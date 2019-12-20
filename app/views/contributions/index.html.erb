@@ -2,12 +2,17 @@ Hello World!!
 
 <%= link_to "マイページ", "user_path" %>
 <%= link_to "show", "contribution_path"%>
-<%= link_to "投稿する", "new_contribution_path" %>
+<%= link_to "投稿する", new_contribution_path %>
+
 <%= link_to "新規登録", "/signup/signup_1" %>
 <%= link_to "ログイン", new_user_session_path %>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 
 
 <% if user_signed_in? %>
-<h1>fasfdfasdf</h1>
+  <% @contributions.each do |contribution| %>
+    <%= contribution.title %><br>
+    <%= image_tag contribution.image.url %><br>
+    <%= contribution.text %>
+  <%end%>
 <% end %>
