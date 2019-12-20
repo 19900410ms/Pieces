@@ -4,6 +4,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :contributions
+
+  before_create :build_default_profile
+
+  private
+  def build_default_profile
+    build_profile
+    true
+  end
+
 end
