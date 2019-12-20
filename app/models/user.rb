@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :nickname, :email, :password, :password_confirmation, presence: true
+  validates :password, length: {minimum: 7}, format: { with: /\A[a-z\d]{6,20}+\z/i}, on: :create
+
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
   has_many :contributions

@@ -27,9 +27,8 @@ class SignupController < ApplicationController
       password: session[:password],
       password_confirmation: session[:password_confirmation]
     )
-    @user.build_profile(session[:profiles_attributes])
+    @user.build_profile(profile_params)
     if @user.save
-      session[:profiles_attributes] = user_params[:profiles_attributes]
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
@@ -46,6 +45,10 @@ class SignupController < ApplicationController
       :password_confirmation,
       profiles_attributes: [:id, :gender, :sports, :study_fields]
     )
+  end
+
+  def profile_params
+    params.require(:user).require(:profiles).permit(:gender, :sports, :study_fields)
   end
 
 end
