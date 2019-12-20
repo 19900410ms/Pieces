@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_015533) do
     t.string "gender"
     t.string "sports"
     t.string "study_fields"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"

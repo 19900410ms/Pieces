@@ -1,14 +1,11 @@
 class SignupController < ApplicationController
-
-  def new
-  end
   
   def signup_1
     @user = User.new
+    @user.build_profile
   end
 
   def signup_2
-    binding.pry
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -32,6 +29,7 @@ class SignupController < ApplicationController
     )
     @user.build_profile(session[:profiles_attributes])
     if @user.save
+      session[:profiles_attributes] = user_params[:profiles_attributes]
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else

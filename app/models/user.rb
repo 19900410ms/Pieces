@@ -5,14 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :profile, dependent: :destroy
+  accepts_nested_attributes_for :profile
   has_many :contributions
-
-  before_create :build_default_profile
-
-  private
-  def build_default_profile
-    build_profile
-    true
-  end
 
 end

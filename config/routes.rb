@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :contributions
   resources :signup do
     collection do
-      get "signup_1"
-      get "signup_2"
-      get "done"
+      get :signup_1
+      get :signup_2
+      get :done
     end
   end
   resources :user, only: :show
