@@ -3,5 +3,10 @@ Hello World!!
 <%= link_to "user", "user_path" %>
 <%= link_to "show", "contribution_path"%>
 <%= link_to "new", "new_contribution_path" %>
-<%= link_to "新規登録", "/users/sign_up"%>
+<%= link_to "signup", "/signup/signup_1" %>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+
+<% if user_signed_in? %>
+<h1>fasfdfasdf</h1>
+<% end %>

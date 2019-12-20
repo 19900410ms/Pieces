@@ -1,0 +1,8 @@
+<%= form_with(model: @user, url: signup_index_path, method: :post, local: true) do |form| %>
+  <%= form.fields_for :profiles do |profile_form| %>
+    <%= form.text_field :gender, placeholder: "性別" %>
+    <%= form.text_field :sports, placeholder: "好きなスポーツ分野は？" %>
+    <%= form.text_field :study_fields, placeholder: "好きな学問の分野は？" %>
+    <%= form.submit "登録" %>
+  <% end %>
+<% end %>

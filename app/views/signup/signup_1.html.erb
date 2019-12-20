@@ -1,0 +1,7 @@
+<%= form_with(model: @user, url: signup_2_signup_index_path, method: :get, local: true) do |form| %>
+  <%= form.text_field :nickname, placeholder: "ニックネームを入力してください" %>
+  <%= form.email_field :email, placeholder: "携帯またはパソコンのメールアドレス" %>
+  <%= form.password_field :password, placeholder: "6文字以上" %>
+  <%= form.password_field :password_confirmation, placeholder: "確認のため再度入力" %>
+  <%= form.submit "プロフィール設定画面へ" %>
+<% end %>

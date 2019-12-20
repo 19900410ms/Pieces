@@ -2,5 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "contributions#index"
   resources :contributions
+  resources :signup do
+    collection do
+      get "signup_1"
+      get "signup_2"
+      get "done"
+    end
+  end
   resources :user, only: :show
 end
