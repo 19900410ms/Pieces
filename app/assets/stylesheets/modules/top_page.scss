@@ -4,5 +4,41 @@
   background: image-url("top_page.jpg");
   background-size: cover;
   text-align: center;
-  
+  .welcome {
+    padding: 20px 0;
+    &__title {
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+    &__message {
+      font-weight: 600;
+      font-size: 16px;
+      margin: 20px 0;
+    }
+    &__link {
+      li:first-child {
+        display: block;
+        margin: 10px auto;
+      }
+      li {
+        border: 2px solid #2f89c5;
+        background-color: white;
+        height: 40px;
+        line-height: 40px;
+        width: 120px;
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 20px;
+        display: inline-block;
+        a {
+          text-decoration: none;
+          color: #1d97e9;
+          .icon {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
 }
