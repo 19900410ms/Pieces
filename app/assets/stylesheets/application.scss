@@ -1,2 +1,10 @@
 @import "reset.scss";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 @import "modules/top_page";
+
+
+body {
+  padding: 0;
+  margin: 0;
+}

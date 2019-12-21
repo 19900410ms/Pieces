@@ -1,10 +1,21 @@
-Hello World!!
-
-<%= link_to "マイページ", "user_path" %>
-<%= link_to "index", contributions_path %>
-<%= link_to "show", "contribution_path" %>
-<%= link_to "投稿する", new_contribution_path %>
-
-<%= link_to "新規登録", "/signup/signup_1" %>
-<%= link_to "ログイン", new_user_session_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<section class="top-page">
+  <h1 class="top-page__title">DaiGo Blogへようこそ！！</h1>
+  <p class="top-page__message">
+    このサイトはメンタリストであるDaiGoさんの発言を元に『自分の知識の定着』を目的としたWebサイトになります。<br>
+    本来、知識の定着にはアウトプット時に人間の感情が籠っているとその質は高くなるそうです。<br>
+    しかし、知識を定着させたい時にアウトプットできる人が周囲にいない場合や、共有できない理由があるかもしれません。<br>
+    私も小学校低学年から20歳ころまで消防官という夢がありましたが、周囲に発信しませんでした。<br>
+    何かに努力する人の、アウトプットの場となり、知識の宝庫と感じ取ってもらうことができるページになればと思います。
+  </p>
+  <ul class="top-page__link">
+    <li><%= link_to contributions_path do %>
+      <i class="fas fa-blog icon-block">enter</i>
+    <% end %></li>
+    <li><%= link_to new_user_session_path do %>
+      <i class="fas fa-rocket icon">log in</i>
+    <% end %></li>
+    <li><%= link_to "/signup/signup_1" do %>
+      <i class="fas fa-id-card icon">sign up</i>
+    <% end %></li>
+  </ul>
+</section>
