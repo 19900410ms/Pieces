@@ -29,7 +29,7 @@
           margin-top: 10px;
         }
         #contribution_title:hover {
-          border: 2px #333 solid;
+          border: 2px #998bfa solid;
           border-radius: 5px;
         }
         #contribution_image {
@@ -43,7 +43,7 @@
           margin-top: 10px;
         }
         #contribution_text:hover {
-          border: 2px #333 solid;
+          border: 2px #998bfa solid;
           border-radius: 5px;
         }
         #new-edit-btn {
@@ -52,8 +52,19 @@
           width: 50%;
           font-size: 20px;
           margin: 0 auto;
-          color: white;
-          background-color: black;
+          color: white!important;
+          background-color: #4d81e4;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          -webkit-transition: all .5s;
+          transition: all .5s;
+        }
+        #new-edit-btn:hover {
+          cursor: pointer;
+          background-color: transparent;
+          border: 2px solid #998bfa;
+          color: #998bfa!important;
         }
       }
     }

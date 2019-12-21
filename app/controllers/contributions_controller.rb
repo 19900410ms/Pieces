@@ -13,7 +13,7 @@ class ContributionsController < ApplicationController
 
   def create
     @contribution = Contribution.create(contribution_parmas)
-    redirect_to root_path
+    redirect_to contributions_path
   end
 
   def edit
