@@ -1,0 +1,61 @@
+.new-edit {
+  @include display;
+  text-align: center;
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+  &__form {
+    .contribution-form {
+      display: block;
+      &__field {
+        margin: 20px 0;
+        label:hover {
+          cursor: pointer;
+          font-weight: 700;
+        }
+        label {
+          font-size: 18px;
+          .picture-icon {
+            margin-top: 10px;
+            font-size: 50px;
+          }
+        }
+        #contribution_title {
+          font-size: 20px;
+          height: 30px;
+          width: 50%;
+          margin-top: 10px;
+        }
+        #contribution_title:hover {
+          border: 2px #333 solid;
+          border-radius: 5px;
+        }
+        #contribution_image {
+          display: none;
+        }
+        #contribution_text {
+          resize: none;
+          font-size: 20px;
+          height: 100px;
+          width: 50%;
+          margin-top: 10px;
+        }
+        #contribution_text:hover {
+          border: 2px #333 solid;
+          border-radius: 5px;
+        }
+        #new-edit-btn {
+          display: block;
+          line-height: 50px;
+          width: 50%;
+          font-size: 20px;
+          margin: 0 auto;
+          color: white;
+          background-color: black;
+        }
+      }
+    }
+  }
+}

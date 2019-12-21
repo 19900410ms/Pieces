@@ -1,6 +1,24 @@
-<%= form_with(model: @contribution, local: true) do |form| %>
-  <%= form.text_field :title, placeholder: "タイトル" %>
-  <%= form.file_field :image, placeholder: "写真" %>
-  <%= form.text_area :text, placeholder: "本文" %>
-  <%= form.submit "投稿する" %>
+<%= form_with(model: @contribution, local: true, class: :"contributin-form") do |form| %>
+  <div class="contribution-form__field">
+    <label>
+    title <br>
+    </label>
+    <%= form.text_field :title, placeholder: "title" %>
+  </div>
+  <div class="contribution-form__field">
+    <label>
+      Image <br>
+      <i class="fas fa-camera-retro picture-icon"></i>
+      <%= form.file_field :image %>
+    </label>
+  </div>
+  <div class="contribution-form__field">
+    <label>
+    text<br />
+    </label>
+    <%= form.text_area :text, placeholder: "text" %>
+  </div>
+  <div class="contribution-form__field">
+    <%= form.submit "投稿する", id: :"new-edit-btn" %>
+  </div>
 <% end %>

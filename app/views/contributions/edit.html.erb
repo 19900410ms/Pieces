@@ -1,2 +1,6 @@
-
-<%= render partial: "form", locals: {contribution: @contribution} %>
+<section class="new-edit">
+  <h1 class="new-edit__title">投稿フォーム</h1>
+  <div class="new-edit__form">
+    <%= render partial: "form", local: {contribution: @contribution} %>
+  </div>
+</section>
