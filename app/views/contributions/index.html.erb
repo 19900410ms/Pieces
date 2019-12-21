@@ -1,18 +1,15 @@
-Hello World!!
-
-<%= link_to "マイページ", "user_path" %>
-<%= link_to "index", contributions_path %>
-<%= link_to "show", "contribution_path" %>
-<%= link_to "投稿する", new_contribution_path %>
-<%= link_to "新規登録", "/signup/signup_1" %>
-<%= link_to "ログイン", new_user_session_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-
-
-<% if user_signed_in? %>
+<section class="index">
   <% @contributions.each do |contribution| %>
-    <%= contribution.title %><br>
-    <%= image_tag contribution.image.url %><br>
-    <%= contribution.text %>
+    <div class="index__box">
+      <%= link_to "/contributions/#{contribution.id}" do %>
+        <div class="index__box__image">
+          <%= image_tag contribution.image.url %>
+        </div>
+        <div class="index__box__description">
+          <%= contribution.title %>
+        </div>
+        </ul>
+      <% end %>
+    </div>
   <%end%>
-<% end %>
+</section>

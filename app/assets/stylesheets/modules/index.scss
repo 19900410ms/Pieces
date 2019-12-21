@@ -1,0 +1,19 @@
+.index {
+  @include display;
+  background-color: #f5f5f5;
+  &__box {
+    background-color: black;
+    height: auto;
+    width: auto;
+    margin: 10px;
+    &__image {
+      position: relative;
+      img {
+      }
+    }
+    &__discription {
+      position: absolute;
+      top: 60px;
+    }
+  }
+}
