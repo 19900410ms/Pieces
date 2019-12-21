@@ -17,22 +17,22 @@
       margin: 20px 0;
     }
     &__link {
-      li:first-child {
+      a:first-child {
         display: block;
         margin: 10px auto;
       }
-      li {
+      a {
         border: 2px solid #2f89c5;
         background-color: white;
         height: 40px;
         line-height: 40px;
         width: 120px;
         font-size: 20px;
+        text-decoration: none;
         text-align: center;
-        margin: 10px 20px;
+        margin: 20px;
         display: inline-block;
-        a {
-          text-decoration: none;
+        li {
           color: #1d97e9;
           .icon {
             margin-right: 10px;

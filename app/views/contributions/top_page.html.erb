@@ -9,15 +9,15 @@
       何かに努力する人の、アウトプットの場となり、知識の宝庫と感じ取ってもらうことができるページになればと思います。
     </p>
     <ul class="welcome__link">
-      <li class="welcome__link__first"><%= link_to contributions_path do %>
-        <i class="fas fa-blog icon"></i>enter
-      <% end %></li>
-      <li class="welcome__link__second"><%= link_to new_user_session_path do %>
-        <i class="fas fa-rocket icon"></i>log in
-      <% end %></li>
-      <li class="welcome__link__third"><%= link_to "/signup/signup_1" do %>
-        <i class="fas fa-id-card icon"></i>sign up
-      <% end %></li>
+      <%= link_to contributions_path, class: :"welcome__link__first" do %>
+        <li><i class="fas fa-blog icon"></i>enter</li>
+      <% end %>
+      <%= link_to new_user_session_path, class: :"welcome__link__second" do %>
+        <li><i class="fas fa-rocket icon"></i>log in</li>
+      <% end %>
+      <%= link_to "/signup/signup_1", class: :"welcome__link__third" do %>
+        <li class="third-icon"><i class="fas fa-id-card icon"></i>sign up</li>
+      <% end %>
     </ul>
   </div>
 </section>

@@ -1,8 +1,10 @@
 $(function() {
+
+  //top_page
   $('.welcome__link__first').hover(
     function() {
       $(this).stop().animate( {
-        "width" : "160px",
+        "width" : "180px",
         'height' : '60px',
         'line-height' : '60px',
         'margin' : '20px auto',
@@ -19,4 +21,37 @@ $(function() {
       }, 'fast');
     }
   );
+
+  $('.welcome__link__second').hover(
+    function() {
+      $(this).stop().animate( {
+        "font-size" : '22px',
+        "border-radius" : '20px'
+      }, 'fast');
+    },
+    function() {
+      $(this).stop().animate( {
+        "font-size" : '20px',
+        "border-radius" : '0'
+      }, 'fast');
+    }
+  );
+
+  $('.welcome__link__third').hover(
+    function() {
+      $(this).stop().animate( {
+        "font-size" : '18x',
+        "border-radius" : '10px',
+        'font-weight' : "700"
+      }, 'fast');
+    },
+    function() {
+      $(this).stop().animate( {
+        "font-size" : '20px',
+        "border-radius" : '0',
+        'font-weight' : "500"
+      }, 'fast');
+    }
+  );
+  
 });

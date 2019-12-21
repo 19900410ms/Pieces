@@ -26,6 +26,9 @@ class ContributionsController < ApplicationController
   end
 
   def top_page
+    if user_signed_in?
+      redirect_to contributions_path
+    end
   end
   
   private
