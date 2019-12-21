@@ -1,0 +1,23 @@
+.show {
+  @include display;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #f5f5f5;
+  &__box {
+    border: solid 1px #f5f5f5;
+    border-radius: 10px;
+    background-color: snow;
+    margin: 0 auto;
+    max-width: 700px;
+    min-width: 70%;
+    &__image {
+      margin: 10px 0;
+      overflow: scroll;
+      position: relative;
+      &__url {
+        height: auto;
+        width: auto;
+      }
+    }
+  }
+}

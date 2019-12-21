@@ -1,10 +1,13 @@
 class ContributionsController < ApplicationController
 
+  before_action :set_contribution, only: [:show, :edit, :destroy]
+
   def index
-    @contributions = Contribution.all
+    @contributions = Contribution.all.order("created_at DESC")
   end
 
   def show
+
   end
 
   def new
@@ -34,6 +37,10 @@ class ContributionsController < ApplicationController
   private
   def contribution_parmas
     params.require(:contribution).permit(:title, :image, :text).merge(user_id: current_user.id)
+  end
+
+  def set_contribution
+    @contribution = Contribution.find(params[:id])
   end
 
 end
