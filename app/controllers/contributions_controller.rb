@@ -24,6 +24,9 @@ class ContributionsController < ApplicationController
 
   def destroy
   end
+
+  def top_page
+  end
   
   private
   def contribution_parmas

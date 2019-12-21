@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "contributions#index"
-  resources :contributions
+  root to: "contributions#top_page"
+  resources :contributions do
+    collection do
+      get :top_page
+    end
+  end
   resources :signup do
     collection do
       get :signup_1
