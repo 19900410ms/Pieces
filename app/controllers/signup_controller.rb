@@ -15,12 +15,10 @@ class SignupController < ApplicationController
   end
 
   def done
-    binding.pry
     sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   def create
-    binding.pry
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],

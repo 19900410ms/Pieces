@@ -14,8 +14,9 @@
     <%= yield %>
   
   </body>
-  
-    <%= link_to "マイページ", "user_path" %>
+  <% if user_signed_in? %>
+    <%= link_to "マイページ", "/users/#{current_user.id}" %>
+  <% end %>
     <%= link_to "index", contributions_path %>
     <%= link_to "show", "contribution_path" %>
     <%= link_to "投稿する", new_contribution_path %>
