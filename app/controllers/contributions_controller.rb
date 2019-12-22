@@ -3,7 +3,7 @@ class ContributionsController < ApplicationController
   before_action :set_contribution, only: [:show, :edit, :destroy]
 
   def index
-    @contributions = Contribution.all.order("created_at DESC")
+    @contributions = Contribution.all.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def show

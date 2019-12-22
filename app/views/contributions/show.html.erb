@@ -2,7 +2,7 @@
   <section class="show-contribution" style="background-image: url(<%= @contribution.image %>);">
     <div class="show-contribution__box">
       <h1 class="show-contribution__box__title"><%= @contribution.title %></h1>
-      <p class="show-contribution__box__text"><%= @contribution.text %></p>
+      <p class="show-contribution__box__text"><%= simple_format(@contribution.text) %></p>
     </div>
   </section>
 

@@ -1,24 +1,19 @@
 <section class="index">
   <div class="index-field">
     <% @contributions.each do |contribution| %>
-      <div class="index-field__box">
-        <%= link_to "/contributions/#{contribution.id}" do %>
-          <% if contribution.image.present? %>
-            <div class="index-field__box__image" style="background-image: url(<%= contribution.image %>);">
-          <% else %>
-            <div class="index-field__box__image">
-          <% end %>
-            <h1 class="index-field"><%= contribution.title %></h1>
-            <ul>
-              <li><i class="far fa-heart"></i>：●●</li>
-              <li>コメント：●●件</li>
-            </ul>
+      <%= link_to "/contributions/#{contribution.id}", class: :"index-field__box" do %>
+        <div class="index-field__box__image" style="background-image: url(<%= contribution.image %>);">
+          <div class="index-title">
+            <h1 class="index-title__text"><%= contribution.title %></h1>
           </div>
-        <% end %>
-      </div>
+          <ul class="index-review">
+            <li class="index-review__list"><i class="far fa-heart"></i>：●●</li>
+          </ul>
+        </div>
+      <% end %> 
     <%end%>
+    <%= paginate(@contributions) %>
+  </div>
 </section>
-
-
 
 

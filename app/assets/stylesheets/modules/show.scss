@@ -8,6 +8,7 @@
     min-width: 50%;
     margin: 0 auto 20px;
     background-size: contain;
+    background-position: center;
     border: solid 1px rgb(238, 185, 185);
     border-radius: 5px;
     overflow: scroll;
@@ -21,7 +22,6 @@
         padding: 10px 0 0;
       }
       &__text {
-        font-size: 18px;
         padding: 0 10px 10px;
       }
     }
