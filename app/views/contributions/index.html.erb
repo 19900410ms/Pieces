@@ -1,28 +1,24 @@
 <section class="index">
-  <% @contributions.each do |contribution| %>
-    <div class="index__box">
-      <%= link_to "/contributions/#{contribution.id}" do %>
-        <div class="index__box__image">
+  <div class="index-field">
+    <% @contributions.each do |contribution| %>
+      <div class="index-field__box">
+        <%= link_to "/contributions/#{contribution.id}" do %>
           <% if contribution.image.present? %>
-            <%= image_tag contribution.image.url %>
+            <div class="index-field__box__image" style="background-image: url(<%= contribution.image %>);">
           <% else %>
-            <div class="image-none"></div>
+            <div class="index-field__box__image">
           <% end %>
-        </div>
-        <div class="index__box__description">
-          <%= contribution.title %>
-        </div>
-      <% end %>
-    </div>
-  <%end%>
+            <h1 class="index-field"><%= contribution.title %></h1>
+            <ul>
+              <li><i class="far fa-heart"></i>：●●</li>
+              <li>コメント：●●件</li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    <%end%>
 </section>
 
 
-<%= link_to "マイページ", "user_path" %>
-<%= link_to "index", contributions_path %>
-<%= link_to "show", "contribution_path" %>
-<%= link_to "投稿する", new_contribution_path %>
-<%= link_to "新規登録", "/signup/signup_1" %>
-<%= link_to "ログイン", new_user_session_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
 
