@@ -1,22 +1,49 @@
 .show {
   @include display;
   padding: 20px 0;
-  text-align: center;
   background-color: #f5f5f5;
-  &__box {
-    border: solid 1px #f5f5f5;
-    border-radius: 10px;
-    background-color: snow;
+  .show-contribution {
+    height: 400px;
+    width: 70%;
+    min-width: 50%;
+    margin: 0 auto 20px;
+    background-size: cover;
+    border: solid 1px rgb(238, 185, 185);
+    border-radius: 5px;
+    overflow: scroll;
+    &__box {
+      @include display;
+      &__title {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        padding: 10px 0 0;
+        background-color: rgba(255,255,255,0.7);
+      }
+      &__text {
+        font-size: 18px;
+        padding: 0 10px 10px;
+        background-color: rgba(255,255,255,0.7);
+      }
+    }
+  }
+  .show-comment {
+    width: 70%;
+    min-width: 50%;
     margin: 0 auto;
-    max-width: 700px;
-    min-width: 70%;
-    &__image {
-      margin: 10px 0;
-      overflow: scroll;
-      position: relative;
-      &__url {
-        height: auto;
-        width: auto;
+    &__form {
+      width: 70%;
+      min-width: 50%;
+      margin: 0 auto;
+      &__with {
+        width: 100%;
+        #contribution_text {
+        
+        height: 100px;
+        }
+        #comment-btn {
+          display: block;
+        }
       }
     }
   }

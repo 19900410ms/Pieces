@@ -23,6 +23,8 @@ class ContributionsController < ApplicationController
   end
 
   def update
+    @contribution.save
+    redirect_to contributions_path
   end
 
   def destroy

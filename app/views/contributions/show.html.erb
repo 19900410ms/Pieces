@@ -1,29 +1,22 @@
-<section class="show">
-  <div class="show__box">
-    <div class="show__box__image">
-      <div class="show__box__image__url">
-        <%= image_tag @contribution.image.url, class: "show__box__image__url__picture" %>
-      </div>
-      <div class="show-contribution">
-        <div class="show-contribution__title">
-          <%= @contribution.title %>
-        </div>
-        <div class="show-contribution__text">
-          <%= @contribution.text %>
-        </div>
-      </div>
+<div class="show">
+  <section class="show-contribution" style="background-image: url(<%= @contribution.image %>);">
+    <div class="show-contribution__box">
+      <h1 class="show-contribution__box__title"><%= @contribution.title %></h1>
+      <p class="show-contribution__box__text"><%= @contribution.text %></p>
     </div>
-    <div class="show__box__comment">
-      <div class="show__box__comment__index">
-        <% 10.times do %>
-          <h1 class="comment">yoooo!!</h1>
-        <% end %>
-      </div>
-    <div class="show__box__right__comment__fprm">
-      <%= form_with(model: @contribution, local: true, class:"show__box__right__comment__fprm__with") do |form| %>
-        <%= form.text_area :title %>
+  </section>
+
+  <section class="show-comment">
+    <div class="show-comment__form">
+      <%= form_with(model: @contribution, local: true, class:"show-comment__form__with", method: :post) do |form| %>
+        <%= form.text_area :text %>
         <%= form.submit "コメントする", id: :"comment-btn" %>
       <% end %>
     </div>
-  </div>
-</section>
+    <div class="show-comment__index">
+      <% 10.times do %>
+        <h1 class="comment">yoooo!!</h1>
+      <% end %>
+    </div>
+  </section>
+</div>
