@@ -29,6 +29,61 @@
       display: none;
     }
   }
+
+  .show-edit-destroy {
+    height: 35px;
+    line-height: 35px;
+    width: 70%;
+    margin: 0 auto 20px;
+    border: solid 1px red;
+    border-radius: 5px;
+    .control-box {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      &__edit {
+        width: 50%;
+        background-color: rgb(252, 90, 117);
+        border-right: 1px solid red;
+        transition:all .3s ease;
+        &__btn {
+          text-decoration: none;
+          color: white;
+          transition:all .3s ease;
+          &__text {
+            font-size: 18px;
+          }
+        }
+        &__btn:hover {
+          color:rgb(252, 90, 117);
+        }
+      }
+      &__edit:hover {
+        background-color: white;
+      }
+      &__delete {
+        width: 50%;
+        background-color: rgb(252, 90, 117);
+        transition:all .3s ease;
+        &__btn {
+          text-decoration: none;
+          color: white;
+          transition:all .3s ease;
+          &__text {
+            font-size: 18px;
+          }
+        }
+        &__btn:hover {
+          color:rgb(252, 90, 117);
+        }
+      }
+      &__delete:hover {
+        background-color: white;
+      }
+    }
+  }
+
+
   .show-comment {
     width: 70%;
     min-width: 50%;
