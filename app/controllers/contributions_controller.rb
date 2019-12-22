@@ -23,7 +23,8 @@ class ContributionsController < ApplicationController
   end
 
   def update
-    @contribution.save
+    contribution = Contribution.find(params[:id])
+    contribution.update(contribution_parmas)
     redirect_to contributions_path
   end
 
