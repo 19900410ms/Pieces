@@ -1,0 +1,44 @@
+<section class="user-show">
+  <div class="user-show__title">
+    <h1 class="user-show__title__top">プロフィール画面<h1>
+  </div>
+  <% if current_user.id == @user.id %>
+    <div class="profile-edit">
+      <%= form_with(mode: @user, local: true, class: :"profile-edit__form") do |form| %>
+        <div class="profile-edit__form__field">
+          <label>
+          ニックネーム<br>
+          <%= form.text_field :nickname, placeholder: @user.nickname %>
+        </div>
+        
+        <div class="profile-edit__form__field">
+          <label>
+          メールアドレス<br>
+          <%= form.email_field :email, placeholder: @user.email %>
+        </div>
+
+        <%= form.fields_for :profiles do |profile_form| %>
+          <div class="profile-edit__form__field">
+            <label>
+            性別<br>
+            <%= profile_form.text_field :gender, placeholder: @user.profile.gender %>
+          </div>
+
+          <div class="profile-edit__form__field">
+            <label>
+            好きなスポーツ<br>
+            <%= profile_form.text_field :sports, placeholder: @user.profile.sports %>
+          </div>
+
+          <div class="profile-edit__form__field">
+            <label>
+            好きな学問<br>
+            <%= profile_form.text_field :study_fields, placeholder: @user.profile.study_fields %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    
+  <% end %>
+</section>
