@@ -1,8 +1,100 @@
-.user-show {
-  @include display;
-  &__title {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 20px 0;
+.user {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  padding-top: 20px;
+  .user-show {
+    text-align: center;
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .profile-edit {
+      &__form {
+        &__field {
+          margin: 10px 0;
+          label {
+            font-size: 16px;
+            #user_nickname, #user_email, #user_profiles_gender, #user_profiles_study_fields, #user_profiles_sports {
+              height: 30px;
+              width: 35%;
+              border-radius: 5px;
+              margin-top: 5px;
+            }
+          }
+        }
+        #user-btn {
+          margin: 25px auto;
+          display: block;
+          height: 30px;
+          width: 35%;
+          border-radius: 5px;
+          border: rgb(59, 207, 59) solid 1px;
+          background-color: rgb(116, 231, 116);
+        }
+      }
+    }
+  }
+  .user-index {
+    margin: 20px 0 0;
+    .user-index-field {
+      height: 100vh;
+      width: 70%;
+      margin: 0 auto;
+      &__box {
+        text-decoration: none;
+        &__image {
+          height: 400px;
+          background-size: cover;
+          background-position: center center;
+          border-radius: 5px;
+          width: 100%;
+          margin: 20px 0;
+          display: block;
+          position: relative;
+          text-decoration: none;
+          .user-index-title {
+            color: blue;
+            font-size: 20px;
+            height: 30px;
+            line-height: 30px;
+            width: 40%;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            &__text {
+              font-weight: 700;
+              text-align: center;
+              background-color: rgba(255,255,255,0.8);
+              border: rgb(62, 62, 250)  1px solid;
+              border-radius: 15px;
+              overflow-y: scroll;
+              padding: 0 10px;
+            }
+          }
+          .user-index-review {
+            color: rgb(235, 153, 2);
+            font-size: 14px;
+            height: 30px;
+            line-height: 30px;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            display: flex;
+            &__list {
+              text-align: center;
+              background-color: rgba(255,255,255,0.8);
+              border: orange  1px solid;
+              border-radius: 15px;
+              padding: 0 10px;
+            }
+            &__list:first-child {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }

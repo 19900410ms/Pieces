@@ -17,21 +17,24 @@
         <div class="profile-edit__form__field">
           <label>
           性別<br>
-          <%= profile_form.text_field :gender, placeholder: @user.profile.gender %>
+          <%= profile_form.text_field :gender, value: @user.profile.gender %>
         </div>
 
         <div class="profile-edit__form__field">
           <label>
           好きなスポーツ<br>
-          <%= profile_form.text_field :sports, placeholder: @user.profile.sports %>
+          <%= profile_form.text_field :sports, value: @user.profile.sports %>
         </div>
 
         <div class="profile-edit__form__field">
           <label>
           好きな学問<br>
-          <%= profile_form.text_field :study_fields, placeholder: @user.profile.study_fields %>
+          <%= profile_form.text_field :study_fields, value: @user.profile.study_fields %>
         </div>
       <% end %>
+
+     <%= form.submit "更新する", id: :"user-btn" %>
+
     <% end %>
   </div>
 <% else %>
