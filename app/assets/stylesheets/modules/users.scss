@@ -25,17 +25,42 @@
           }
         }
         #user-btn {
-          margin: 25px auto;
-          display: block;
           height: 30px;
+          line-height: 30px;
           width: 35%;
           border-radius: 5px;
-          border: rgb(59, 207, 59) solid 1px;
-          background-color: rgb(116, 231, 116);
+          color: white;
+          border: white dashed 2px;
+          background-color: rgb(59, 207, 59);
+          margin: 25px auto;
+          display: block;
+          box-shadow: 0 0 0 2px rgb(59, 207, 59);
+          transition:all .3s ease;
+        }
+        #user-btn:hover {
+          border-style: solid;
+          box-shadow: 0 0 0 5px rgb(59, 207, 59);
         }
       }
     }
   }
+
+  .other-profile {
+    margin-bottom: 10px;
+    &__head {
+      font-size: 16px;
+    }
+    &__detail {
+      font-size: 18px;
+      transition:all .3s ease;
+    }
+    &__detail:hover {
+      font-weight: 700px;
+      color: rgb(59, 207, 59);
+      font-size: 20px;
+    }
+  }
+
   .user-index {
     margin: 20px 0 0;
     .user-index-field {
