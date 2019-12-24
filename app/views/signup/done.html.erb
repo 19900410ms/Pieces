@@ -1,2 +1,23 @@
-登録完了
-<%= link_to "#", root_path %>
+<section class="done">
+  <div class="done__finish">
+    <h1 class="done__finish__registration">ご登録ありがとうございます<h1>
+    <%= link_to "/users/#{current_user.id}" do %>
+      <div class="done-circle">
+        <h1 class="done-circle__title">マイページ<h1>
+        <i class="fas fa-dragon"></i>
+      <div>
+    <% end %>
+    <%= link_to contributions_path do %>
+      <div class="done-circle">
+        <h1 class="done-circle__title">一覧ページ<h1>
+        <i class="fas fa-horse"></i>
+      <div>
+    <% end %>
+    <%= link_to new_contribution_path do %>
+      <div class="done-circle">
+        <h1 class="done-circle__title">投稿画面<h1>
+        <i class="fas fa-dove"></i>
+      <div>
+    <% end %>
+  </div>
+</section>

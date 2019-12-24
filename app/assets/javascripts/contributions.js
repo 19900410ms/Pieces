@@ -13,7 +13,7 @@ $(function() {
     },
     function() {
       $(this).stop().animate( {
-        "width" : "120px",
+        "width" : "130px",
         'height' : '40px',
         'line-height' : '40px',
         'margin' : '0 auto',
