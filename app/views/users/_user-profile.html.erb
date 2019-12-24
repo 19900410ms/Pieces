@@ -3,33 +3,38 @@
     <%= form_with(model: @user, local: true, class: :"profile-edit__form") do |form| %>
       <div class="profile-edit__form__field">
         <label>
-        ニックネーム<br>
-        <%= form.text_field :nickname, placeholder: @user.nickname %>
+          ニックネーム<br>
+          <%= form.text_field :nickname, placeholder: @user.nickname %>
+        </label>
       </div>
       
       <div class="profile-edit__form__field">
         <label>
-        メールアドレス<br>
-        <%= form.email_field :email, placeholder: @user.email %>
+          メールアドレス<br>
+          <%= form.email_field :email, placeholder: @user.email %>
+        </label>
       </div>
 
       <%= form.fields_for :profiles do |profile_form| %>
         <div class="profile-edit__form__field">
           <label>
-          性別<br>
-          <%= profile_form.text_field :gender, value: @user.profile.gender %>
+            性別<br>
+            <%= profile_form.text_field :gender, value: @user.profile.gender %>
+          </label>
         </div>
 
         <div class="profile-edit__form__field">
           <label>
-          好きなスポーツ<br>
-          <%= profile_form.text_field :sports, value: @user.profile.sports %>
+            好きなスポーツ<br>
+            <%= profile_form.text_field :sports, value: @user.profile.sports %>
+          </label>
         </div>
 
         <div class="profile-edit__form__field">
           <label>
-          好きな学問<br>
-          <%= profile_form.text_field :study_fields, value: @user.profile.study_fields %>
+            好きな学問<br>
+            <%= profile_form.text_field :study_fields, value: @user.profile.study_fields %>
+          </label>
         </div>
       <% end %>
 

@@ -1,7 +1,33 @@
-<%= form_with(model: @user, url: signup_2_signup_index_path, method: :get, local: true) do |form| %>
-  <%= form.text_field :nickname, placeholder: "ニックネームを入力してください" %>
-  <%= form.email_field :email, placeholder: "携帯またはパソコンのメールアドレス" %>
-  <%= form.password_field :password, placeholder: "6文字以上" %>
-  <%= form.password_field :password_confirmation, placeholder: "確認のため再度入力" %>
-  <%= form.submit "プロフィール設定画面へ" %>
-<% end %>
+<section class="signup-1">
+  <%= form_with(model: @user, url: signup_2_signup_index_path, method: :get, local: true, class: :"signup-1-form") do |form| %>
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">ニックネーム</h1>
+      </label>
+      <%= form.text_field :nickname, placeholder: "ニックネームを入力してください" %>
+    </div>
+
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">メールアドレス</h1>
+      </label>
+      <%= form.email_field :email, placeholder: "携帯またはパソコンのメールアドレス" %>
+    </div>
+
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">パスワード設定</h1>
+      </label>
+      <%= form.password_field :password, placeholder: "6文字以上" %>
+    </div>
+      
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">パスワード再入力</h1>
+      </label>
+      <%= form.password_field :password_confirmation, placeholder: "確認のため再度入力" %>
+    </div>
+      
+    <%= form.submit "プロフィール設定画面へ" %>
+  <% end %>
+</section>

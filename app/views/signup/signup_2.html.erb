@@ -1,8 +1,28 @@
-<%= form_with(model: @user, url: signup_index_path, method: :post, local: true) do |form| %>
-  <%= form.fields_for :profiles do |profile_form| %>
-    <%= profile_form.text_field :gender, placeholder: "性別" %>
-    <%= profile_form.text_field :sports, placeholder: "好きなスポーツ分野は？" %>
-    <%= profile_form.text_field :study_fields, placeholder: "好きな学問の分野は？" %>
-    <%= profile_form.submit "登録" %>
+<section class="signup-2">
+  <%= form_with(model: @user, url: signup_index_path, method: :post, local: true, class: :"signup-2-form") do |form| %>
+    <%= form.fields_for :profiles do |profile_form| %>
+      <div class="signup-2-form__field">
+        <label>
+        <h1 class="signup-2-form__field__title">性別</h1>
+        </label>
+        <%= profile_form.text_field :gender, placeholder: "性別" %>
+      </div>
+
+      <div class="signup-2-form__field">
+        <label>
+        <h1 class="signup-2-form__field__title">スポーツ</h1>
+        </label>
+        <%= profile_form.text_field :sports, placeholder: "好きなスポーツ分野は？" %>
+      </div>
+
+      <div class="signup-2-form__field">
+        <label>
+        <h1 class="signup-2-form__field__title">学問</h1>
+        </label>
+        <%= profile_form.text_field :study_fields, placeholder: "好きな学問の分野は？" %>
+      </div>
+
+      <%= profile_form.submit "登録" %>
+    <% end %>
   <% end %>
-<% end %>
+</section>

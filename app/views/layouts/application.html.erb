@@ -14,14 +14,14 @@
     <%= yield %>
   
   </body>
-  <% if user_signed_in? %>
-    <%= link_to "マイページ", "/users/#{current_user.id}" %>
-  <% end %>
-    <%= link_to "index", contributions_path %>
-    <%= link_to "show", "contribution_path" %>
-    <%= link_to "投稿する", new_contribution_path %>
-    <%= link_to "新規登録", "/signup/signup_1" %>
-    <%= link_to "ログイン", new_user_session_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  
+  <div class="link">
+    <% if user_signed_in? %>
+      <%= link_to "マイページ", "/users/#{current_user.id}" %>
+    <% end %>
+      <%= link_to "index", contributions_path %>
+      <%= link_to "投稿する", new_contribution_path %>
+      <%= link_to "新規登録", "/signup/signup_1" %>
+      <%= link_to "ログイン", new_user_session_path %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
 </html>

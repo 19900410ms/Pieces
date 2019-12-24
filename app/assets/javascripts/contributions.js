@@ -59,15 +59,11 @@ $(function() {
     function() {
       $(this).stop().animate( {
         "font-size" : '100px',
-        "color" : "orange",
-        'background-color' : 'red',
       }, 'fast');
     },
     function() {
       $(this).stop().animate( {
         "font-size" : '50px',
-        "color" : "black",
-        'background-color' : 'white',
       }, 'fast');
     }
   );
