@@ -1,0 +1,41 @@
+.signup-1, .signup-2 {
+  @include display;
+  text-align: center;
+  &__title {
+    padding: 20px 0 0;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 15px;
+  }
+  .signup-1-form, .signup-2-form {
+    display: block;
+    font-size: 16px;
+    &__field {
+      margin: 10px 0;
+      &__title {
+        margin-bottom: 5px;
+      }
+      #user_nickname, #user_email, #user_password, #user_password_confirmation {
+        @include user-form;
+      }
+      #user_profiles_gender, #user_profiles_sports, #user_profiles_study_fields {
+        @include user-form;
+      }
+    }
+    #signup-1-btn, #signup-2-btn {
+      font-size: 20px;
+      height: 30px;
+      width: 50%;
+      font-size: 16px;
+      display: block;
+      margin: 30px auto 0;
+      border: violet solid;
+      border-radius: 5px;
+      background-color: violet;
+    }
+    #signup-2-btn {
+      background-color: springgreen;
+      border: springgreen solid;
+    }
+  }
+}

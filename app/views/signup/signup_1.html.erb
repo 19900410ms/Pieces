@@ -1,4 +1,5 @@
 <section class="signup-1">
+  <h1 class="signup-1__title">登録画面</h1>
   <%= form_with(model: @user, url: signup_2_signup_index_path, method: :get, local: true, class: :"signup-1-form") do |form| %>
     <div class="signup-1-form__field">
       <label>
@@ -28,6 +29,6 @@
       <%= form.password_field :password_confirmation, placeholder: "確認のため再度入力" %>
     </div>
       
-    <%= form.submit "プロフィール設定画面へ" %>
+    <%= form.submit "プロフィール設定画面へ", id: :"signup-1-btn" %>
   <% end %>
 </section>

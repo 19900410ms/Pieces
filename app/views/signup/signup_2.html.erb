@@ -1,4 +1,5 @@
 <section class="signup-2">
+  <h1 class="signup-2__title">登録画面</h1>
   <%= form_with(model: @user, url: signup_index_path, method: :post, local: true, class: :"signup-2-form") do |form| %>
     <%= form.fields_for :profiles do |profile_form| %>
       <div class="signup-2-form__field">
@@ -22,7 +23,7 @@
         <%= profile_form.text_field :study_fields, placeholder: "好きな学問の分野は？" %>
       </div>
 
-      <%= profile_form.submit "登録" %>
+      <%= profile_form.submit "登録", id: :"signup-2-btn" %>
     <% end %>
   <% end %>
 </section>
