@@ -40,3 +40,18 @@
   }
 }
 
+.done {
+  @include display;
+  background: url("roop.jpg") repeat-x;
+  background-size: cover;
+  position: relative;
+  animation: bg-slider 20s linear infinite;
+  &__finish {
+    text-align: center;
+    font-size: 20px;
+    &__registration {
+      padding: 20px 0 0px;
+    }
+    
+  }
+}

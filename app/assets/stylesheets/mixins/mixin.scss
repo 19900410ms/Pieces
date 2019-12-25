@@ -8,3 +8,8 @@
   width: 50%;
   padding: 5px;
 }
+
+@keyframes bg-slider {
+	from { background-position: 0 0; }
+    to { background-position: -1518px 0; }
+}
