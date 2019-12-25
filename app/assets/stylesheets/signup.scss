@@ -44,14 +44,40 @@
   @include display;
   background: url("roop.jpg") repeat-x;
   background-size: cover;
-  position: relative;
   animation: bg-slider 20s linear infinite;
+  text-align: center;
+  display: block;
   &__finish {
-    text-align: center;
     font-size: 20px;
+    padding: 20px 0 0px;
     &__registration {
-      padding: 20px 0 0px;
+      margin: 50px 0;
     }
-    
+    &__circle {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      &__link {
+        height: 100px;
+        width: 100px;
+        min-width: 7%;
+        color: white;
+        text-decoration: none;
+        margin: 20px;
+        padding: 70px;
+        background-color: blue;
+        border-radius: 50%;
+        &__list {
+          &__title {
+            font-size: 18px;
+            margin-bottom: 5px;
+          }
+          &__icon {
+            font-size: 70px;
+            color: white;
+          }
+        }
+      }
+    }
   }
 }
