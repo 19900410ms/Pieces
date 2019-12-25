@@ -81,3 +81,48 @@
     }
   }
 }
+
+@media screen and ( max-width:479px ) {
+  .done {
+    @include display;
+    background: url("roop.jpg") repeat-x;
+    background-size: cover;
+    animation: bg-slider 20s linear infinite;
+    text-align: center;
+    display: block;
+    &__finish {
+      font-size: 20px;
+      padding: 20px 0 0px;
+      &__registration {
+        margin: 50px 0 30px;
+      }
+      &__circle {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        &__link {
+          height: 100px;
+          width: 100px;
+          min-width: 7%;
+          color: blue;
+          text-decoration: none;
+          margin: 20px auto;
+          padding: 30px;
+          background-color: white;
+          border: 3px solid blue;
+          border-radius: 50%;
+          &__list {
+            &__title {
+              font-size: 16px;
+              margin-bottom: 5px;
+            }
+            &__icon {
+              font-size: 50px;
+              color: blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
