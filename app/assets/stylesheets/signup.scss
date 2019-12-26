@@ -142,14 +142,29 @@
     padding: 20px 0 0;
   }
   .new_user {
+    font-size: 16px;
     margin: 20px 0 0;
-    .log-in-field {
+    &__field {
       display: block;
-      .label {
-        .log-in-title {
-          font-size: 20px;
-          margin-bottom: 15px;
-        }
+      &__title {
+        margin: 10px 0 5px;
+      }
+      #user_email, #user_password {
+        height: 30px;
+        width: 30%;
+        border: solid black 1px;
+        border-radius: 5px;
+      }
+      #user_password {
+        margin: 0 0 10px;
+      }
+      #log-in-btn {
+        height: 30px;
+        width: 30%;
+        margin: 15px 0 0;
+        background-color: white;
+        border: solid black 1px;
+        border-radius: 5px;
       }
     }
   }
