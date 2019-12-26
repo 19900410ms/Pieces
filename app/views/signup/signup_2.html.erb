@@ -5,22 +5,22 @@
       <div class="signup-2-form__field">
         <label>
         <h1 class="signup-2-form__field__title">性別</h1>
-        </label>
         <%= profile_form.text_field :gender, placeholder: "性別" %>
+        </label>
       </div>
 
       <div class="signup-2-form__field">
         <label>
         <h1 class="signup-2-form__field__title">スポーツ</h1>
-        </label>
         <%= profile_form.text_field :sports, placeholder: "好きなスポーツ分野は？" %>
+        </label>
       </div>
 
       <div class="signup-2-form__field">
         <label>
         <h1 class="signup-2-form__field__title">学問</h1>
-        </label>
         <%= profile_form.text_field :study_fields, placeholder: "好きな学問の分野は？" %>
+        </label>
       </div>
 
       <%= profile_form.submit "登録", id: :"signup-2-btn" %>

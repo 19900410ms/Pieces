@@ -1,3 +1,4 @@
+//ユーザー登録ページ
 .signup-1, .signup-2 {
   @include display;
   text-align: center;
@@ -82,6 +83,7 @@
   }
 }
 
+//スマートフォン設定
 @media screen and ( max-width:479px ) {
   .done {
     @include display;
@@ -90,11 +92,12 @@
     animation: bg-slider 20s linear infinite;
     text-align: center;
     display: block;
+    overflow: scroll;
     &__finish {
       font-size: 20px;
-      padding: 20px 0 0px;
+      padding: 10px 0 0px;
       &__registration {
-        margin: 50px 0 30px;
+        margin: 10px 0;
       }
       &__circle {
         margin: 0 auto;
@@ -121,6 +124,31 @@
               color: blue;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+
+//ログインページ
+.log-in {
+  @include display;
+  background-color: #f5f5f5;
+  text-align: center;
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 0 0;
+  }
+  .new_user {
+    margin: 20px 0 0;
+    .log-in-field {
+      display: block;
+      .label {
+        .log-in-title {
+          font-size: 20px;
+          margin-bottom: 15px;
         }
       }
     }

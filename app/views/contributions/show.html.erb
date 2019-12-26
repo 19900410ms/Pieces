@@ -6,20 +6,22 @@
     </div>
   </section>
 
-  <section class="show-edit-destroy">
-    <div class="control-box">
-      <div class="control-box__edit">
-        <%= link_to "/contributions/#{@contribution.id}/edit", class: :"control-box__edit__btn" do %>
-          <h1 class="control-box__edit__btn__text">編集する</h1>
-        <% end %>
+  <% if current_user.id == @contribution.user_id %>
+    <section class="show-edit-destroy">
+      <div class="control-box">
+        <div class="control-box__edit">
+          <%= link_to "/contributions/#{@contribution.id}/edit", class: :"control-box__edit__btn" do %>
+            <h1 class="control-box__edit__btn__text">編集する</h1>
+          <% end %>
+        </div>
+        <div class="control-box__delete">
+          <%= link_to "#", class: :"control-box__delete__btn", method: :delete,data: {confirm: '投稿を削除しますか？'} do %>
+            <h1 class="control-box__delete__btn__text">削除する</h1>
+          <% end %>
+        </div>
       </div>
-      <div class="control-box__delete">
-        <%= link_to "#", class: :"control-box__delete__btn", method: :delete,data: {confirm: '投稿を削除しますか？'} do %>
-          <h1 class="control-box__delete__btn__text">削除する</h1>
-        <% end %>
-      </div>
-    </div>
-  </section>
+    </section>
+  <% end %>
 
   <section class="show-comment">
     <div class="show-comment__form">

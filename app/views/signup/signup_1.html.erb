@@ -4,29 +4,29 @@
     <div class="signup-1-form__field">
       <label>
       <h1 class="signup-1-form__field__title">ニックネーム</h1>
-      </label>
       <%= form.text_field :nickname, placeholder: "ニックネームを入力してください" %>
+      </label>
     </div>
 
     <div class="signup-1-form__field">
       <label>
       <h1 class="signup-1-form__field__title">メールアドレス</h1>
-      </label>
       <%= form.email_field :email, placeholder: "携帯またはパソコンのメールアドレス" %>
+      </label>
     </div>
 
     <div class="signup-1-form__field">
       <label>
       <h1 class="signup-1-form__field__title">パスワード設定</h1>
-      </label>
       <%= form.password_field :password, placeholder: "6文字以上" %>
+      </label>
     </div>
       
     <div class="signup-1-form__field">
       <label>
       <h1 class="signup-1-form__field__title">パスワード再入力</h1>
-      </label>
       <%= form.password_field :password_confirmation, placeholder: "確認のため再度入力" %>
+      </label>
     </div>
       
     <%= form.submit "プロフィール設定画面へ", id: :"signup-1-btn" %>
