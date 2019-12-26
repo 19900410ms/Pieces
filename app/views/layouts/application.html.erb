@@ -9,19 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <%= yield %>
   </body>
-
-  <div class="link">
-    <% if user_signed_in? %>
-      <%= link_to "マイページ", "/users/#{current_user.id}" %>
-    <% end %>
-      <%= link_to "index", contributions_path %>
-      <%= link_to "投稿する", new_contribution_path %>
-      <%= link_to "新規登録", "/signup/signup_1" %>
-      <%= link_to "ログイン", new_user_session_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  </div>
 </html>

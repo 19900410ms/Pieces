@@ -1,6 +1,7 @@
 //ユーザー登録ページ
 .signup-1, .signup-2 {
   @include display;
+  background-color: #f5f5f5;
   text-align: center;
   &__title {
     padding: 20px 0 0;
@@ -26,21 +27,31 @@
     #signup-1-btn, #signup-2-btn {
       font-size: 20px;
       height: 30px;
-      width: 50%;
+      width: 30%;
       font-size: 16px;
       display: block;
       margin: 30px auto 0;
-      border: violet solid;
       border-radius: 5px;
-      background-color: violet;
+      background-color: rgb(241, 180, 241);
+      transition: all ease .5s;
     }
     #signup-2-btn {
+      border: springgreen;
       background-color: springgreen;
-      border: springgreen solid;
+    }
+    #signup-1-btn:hover {
+      border: rgb(241, 180, 241) 1px solid;
+      background-color: white;
+    }
+    #signup-2-btn:hover {
+      border: springgreen 1px solid;
+      background-color: white;
     }
   }
 }
 
+
+//登録完了ページ
 .done {
   @include display;
   background: url("roop.jpg") repeat-x;
@@ -68,6 +79,7 @@
         padding: 70px;
         background-color: blue;
         border-radius: 50%;
+        transition:all .7s ease;
         &__list {
           &__title {
             font-size: 18px;
@@ -79,9 +91,19 @@
           }
         }
       }
+      &__link:hover {
+        background-color: skyblue;
+      }
+      &__link:first-child:hover {
+        background-color: navy;
+      }
+      &__link:last-child:hover {
+        background-color: rgb(55, 43, 226);
+      }
     }
   }
 }
+
 
 //スマートフォン設定
 @media screen and ( max-width:479px ) {
@@ -150,8 +172,7 @@
         margin: 10px 0 5px;
       }
       #user_email, #user_password {
-        height: 30px;
-        width: 30%;
+        @include user-form;
         border: solid black 1px;
         border-radius: 5px;
       }
@@ -165,6 +186,16 @@
         background-color: white;
         border: solid black 1px;
         border-radius: 5px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+      }
+      #log-in-btn:hover {
+        cursor: pointer;
+        color: white;
+        background-color: black;
       }
     }
   }
