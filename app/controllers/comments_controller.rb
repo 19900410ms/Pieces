@@ -2,12 +2,12 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @contribution.comments.includes(:user)
+    @comments = @contribution.comments.includes(:user).order("created_at DESC")
   end
 
   def create
     Comment.create(comment_params)
-    redirect to "/contributions/#{contribution.id}"
+    redirect_to contributions_path
   end
 
   private

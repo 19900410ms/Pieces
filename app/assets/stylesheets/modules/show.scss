@@ -146,7 +146,7 @@
           height: 30px;
           width: 100%;
           border-radius: 5px;
-          margin: 10px 0;
+          margin: 10px 0 15px;
           color: white;
           background-color: rgb(252, 90, 117);
           transition:all .3s ease;
@@ -162,15 +162,18 @@
       }
     }
     &__index {
-      border: solid 1px rgb(238, 185, 185);
-      border-radius: 5px;
-      height: 230px;
-      width: 100%;
-      background-color: white;
-      overflow: scroll;
-      margin: 5px 0 0;
-      .comment {
-        line-height: 20px;
+      &__title {
+        text-align: center;
+        font-size: 18px;
+      }
+      &__box {
+        border: solid 1px rgb(238, 185, 185);
+        border-radius: 5px;
+        height: 230px;
+        width: 100%;
+        background-color: white;
+        overflow: scroll;
+        margin: 15px 0 0;
       }
     }
   }
