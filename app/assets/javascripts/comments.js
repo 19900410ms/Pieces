@@ -3,7 +3,7 @@ $(function(){
   function buildHTML(comment) {
     var html = `<div class="show-comment__index__box__description">
                   <p class="show-comment__index__box__description__name">
-                    ${comment.user.nickname}
+                    ${comment.user_nickname}
                     <span class="comment-date">
                       ${comment.created_at}
                     </span>
