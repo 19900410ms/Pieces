@@ -47,7 +47,7 @@
 
   <section class="show-comment">
     <div class="show-comment__form">
-      <%= form_with(model: @contribution, local: true, class:"show-comment__form__with", method: :put) do |form| %>
+      <%= form_with(model: [@contribution, Comment.new], local: true, class:"show-comment__form__with", method: :put) do |form| %>
         <%= form.text_area :text %>
         <%= form.submit "コメントする", id: :"comment-btn" %>
       <% end %>

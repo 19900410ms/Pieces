@@ -2,6 +2,7 @@
   @include display;
   padding: 20px 0;
   background-color: #f5f5f5;
+  overflow: scroll;
   .show-contribution {
     height: 300px;
     width: 70%;
@@ -133,7 +134,7 @@
     &__form {
       display: block;
       &__with {
-        #contribution_text {
+        #comment_text {
           height: 80px;
           width: 100%;
           resize: none;
@@ -162,6 +163,7 @@
     }
     &__index {
       border: solid 1px rgb(238, 185, 185);
+      border-radius: 5px;
       height: 230px;
       width: 100%;
       background-color: white;
