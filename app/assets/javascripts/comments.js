@@ -37,6 +37,8 @@ $(function(){
       $('.show-comment__index__box').append(html);
       $('.comment-box').val('');
       $('#comment-btn').prop('disabled', false);
+      $('.show-comment__index__box').animate({ scrollTop: $('.show-comment__index__box')[0].scrollHeight });
+      return false;
     })
     .fail(function() {
       alert('error');
