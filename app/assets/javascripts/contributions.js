@@ -70,7 +70,7 @@ $(function() {
 
   //show
   $('.show-contribution').click(function() {
-    if($('.show-contribution__box').hasClass('none') == false) {
+    if ($('.show-contribution__box').hasClass('none') == false) {
       $('.show-contribution__box').addClass('none');
     } else {
       $('.show-contribution__box').removeClass('none');

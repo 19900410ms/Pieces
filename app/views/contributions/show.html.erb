@@ -8,7 +8,7 @@
     </div>
   </section>
 
-  <% if current_user.id == @contribution.user_id %>
+  <% if user_signed_in? && current_user.id == @contribution.user_id %>
     <section class="show-edit-destroy">
       <div class="control-box">
         <div class="control-box__edit">
