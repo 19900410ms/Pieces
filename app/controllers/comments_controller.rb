@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @contribution.comments.includes(:user).order("created_at DESC")
+    @comments = @contribution.comments.includes(:user)
   end
 
   def create

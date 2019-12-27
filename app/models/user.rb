@@ -11,5 +11,6 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :contributions
   has_many :comments
+  has_many :likes
 
 end
