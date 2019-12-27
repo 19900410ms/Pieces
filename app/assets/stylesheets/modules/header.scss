@@ -4,6 +4,8 @@
   width: 100vw;
   background-color: #eee;
   position: fixed;
+  top: 0;
+  z-index: 10;
   &__contents {
     text-align: center;
     position: relative;
@@ -22,6 +24,7 @@
     }
   }
   &__nav {
+    height: 40px;
     width: auto;
     margin: 0 0 20px;
     background-color: #eee;

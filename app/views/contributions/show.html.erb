@@ -1,10 +1,26 @@
-<%= render partial: "layouts/header" %>
-
 <div class="show">
   <section class="show-contribution" style="background-image: url(<%= @contribution.image %>);">
     <div class="show-contribution__box">
       <h1 class="show-contribution__box__title"><%= @contribution.title %></h1>
       <p class="show-contribution__box__text"><%= simple_format(@contribution.text) %></p>
+    </div>
+  </section>
+
+  <section class="show-detail">
+    <div class="show-detail__box">
+      <p><%= link_to @contribution.user.nickname, user_path, class: :"show-detail__box__name" %></p>
+      <p><%= link_to @contribution.created_at, class: :"show-detail__box__created-date" %></p>
+      <p>
+        <% if user_signed_in? && current_user.id != @contribution.user_id %>
+          <%= link_to "#", class: :"show-detail__box__like" do %>
+            <i class="far fa-heart like-btn"></i>
+            ：●●
+          <% end %>
+        <% elsif user_signed_in? && current_user.id == @contribution.user_id %>
+          <i class="far fa-heart like-show"></i>
+          ：●●
+        <% end %>
+      </p>
     </div>
   </section>
 
