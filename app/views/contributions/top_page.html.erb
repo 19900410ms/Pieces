@@ -1,0 +1,23 @@
+<section class="top-page">
+  <div class="welcome">
+    <h1 class="welcome__title">DaiGoBlogへようこそ！！</h1>
+    <p class="welcome__message">
+      このサイトはメンタリストであるDaiGoさんの発言を元に『自分の知識の定着』を目的としたWebサイトになります。<br>
+      本来、知識の定着にはアウトプット時に人間の感情が籠っているとその質は高くなるそうです。<br>
+      しかし、知識を定着させたい時にアウトプットできる人が周囲にいない場合や、共有できない理由があるかもしれません。<br>
+      私も小学校低学年から20歳ころまで消防官という夢がありましたが、周囲に発信しませんでした。<br>
+      何かに努力する人の、アウトプットの場となり、知識の宝庫と感じ取ってもらうことができるページになればと思います。
+    </p>
+    <ul class="welcome__link">
+      <%= link_to contributions_path, class: :"welcome__link__first" do %>
+        <li><i class="fas fa-blog icon"></i>enter</li>
+      <% end %>
+      <%= link_to new_user_session_path, class: :"welcome__link__second" do %>
+        <li><i class="fas fa-rocket icon"></i>log in</li>
+      <% end %>
+      <%= link_to "/signup/signup_1", class: :"welcome__link__third" do %>
+        <li class="third-icon"><i class="fas fa-id-card icon"></i>sign up</li>
+      <% end %>
+    </ul>
+  </div>
+</section>

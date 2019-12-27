@@ -1,0 +1,16 @@
+@import "reset.scss";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import "mixins/mixin";
+@import "users";
+@import "signup";
+@import "modules/header";
+@import "modules/top_page";
+@import "modules/index";
+@import "modules/show";
+@import "modules/new-edit";
+
+body {
+  padding: 0;
+  margin: 0;
+}

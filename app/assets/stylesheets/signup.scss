@@ -1,0 +1,202 @@
+//ユーザー登録ページ
+.signup-1, .signup-2 {
+  @include display;
+  background-color: #f5f5f5;
+  text-align: center;
+  &__title {
+    padding: 20px 0 0;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 15px;
+  }
+  .signup-1-form, .signup-2-form {
+    display: block;
+    font-size: 16px;
+    &__field {
+      margin: 10px 0;
+      &__title {
+        margin-bottom: 5px;
+      }
+      #user_nickname, #user_email, #user_password, #user_password_confirmation {
+        @include user-form;
+      }
+      #user_profiles_gender, #user_profiles_sports, #user_profiles_study_fields {
+        @include user-form;
+      }
+    }
+    #signup-1-btn, #signup-2-btn {
+      font-size: 20px;
+      height: 30px;
+      width: 30%;
+      font-size: 16px;
+      display: block;
+      margin: 30px auto 0;
+      border-radius: 5px;
+      background-color: rgb(241, 180, 241);
+      transition: all ease .5s;
+    }
+    #signup-2-btn {
+      border: springgreen;
+      background-color: springgreen;
+    }
+    #signup-1-btn:hover {
+      border: rgb(241, 180, 241) 1px solid;
+      background-color: white;
+    }
+    #signup-2-btn:hover {
+      border: springgreen 1px solid;
+      background-color: white;
+    }
+  }
+}
+
+
+//登録完了ページ
+.done {
+  @include display;
+  background: url("roop.jpg") repeat-x;
+  background-size: cover;
+  animation: bg-slider 20s linear infinite;
+  text-align: center;
+  display: block;
+  &__finish {
+    font-size: 20px;
+    padding: 20px 0 0px;
+    &__registration {
+      margin: 50px 0;
+    }
+    &__circle {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      &__link {
+        height: 100px;
+        width: 100px;
+        min-width: 7%;
+        color: white;
+        text-decoration: none;
+        margin: 20px;
+        padding: 70px;
+        background-color: blue;
+        border-radius: 50%;
+        transition:all .7s ease;
+        &__list {
+          &__title {
+            font-size: 18px;
+            margin-bottom: 5px;
+          }
+          &__icon {
+            font-size: 70px;
+            color: white;
+          }
+        }
+      }
+      &__link:hover {
+        background-color: skyblue;
+      }
+      &__link:first-child:hover {
+        background-color: navy;
+      }
+      &__link:last-child:hover {
+        background-color: rgb(55, 43, 226);
+      }
+    }
+  }
+}
+
+
+//スマートフォン設定
+@media screen and ( max-width:479px ) {
+  .done {
+    @include display;
+    background: url("roop.jpg") repeat-x;
+    background-size: cover;
+    animation: bg-slider 20s linear infinite;
+    text-align: center;
+    display: block;
+    overflow: scroll;
+    &__finish {
+      font-size: 20px;
+      padding: 10px 0 0px;
+      &__registration {
+        margin: 10px 0;
+      }
+      &__circle {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        &__link {
+          height: 100px;
+          width: 100px;
+          min-width: 7%;
+          color: blue;
+          text-decoration: none;
+          margin: 20px auto;
+          padding: 30px;
+          background-color: white;
+          border: 3px solid blue;
+          border-radius: 50%;
+          &__list {
+            &__title {
+              font-size: 16px;
+              margin-bottom: 5px;
+            }
+            &__icon {
+              font-size: 50px;
+              color: blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//ログインページ
+.log-in {
+  @include display;
+  background-color: #f5f5f5;
+  text-align: center;
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 20px 0 0;
+  }
+  .new_user {
+    font-size: 16px;
+    margin: 20px 0 0;
+    &__field {
+      display: block;
+      &__title {
+        margin: 10px 0 5px;
+      }
+      #user_email, #user_password {
+        @include user-form;
+        border: solid black 1px;
+        border-radius: 5px;
+      }
+      #user_password {
+        margin: 0 0 10px;
+      }
+      #log-in-btn {
+        height: 30px;
+        width: 30%;
+        margin: 15px 0 0;
+        background-color: white;
+        border: solid black 1px;
+        border-radius: 5px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+      }
+      #log-in-btn:hover {
+        cursor: pointer;
+        color: white;
+        background-color: black;
+      }
+    }
+  }
+}

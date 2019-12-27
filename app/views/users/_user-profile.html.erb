@@ -1,0 +1,62 @@
+<% if current_user.id == @user.id %>
+  <div class="profile-edit">
+    <%= form_with(model: @user, local: true, class: :"profile-edit__form") do |form| %>
+      <div class="profile-edit__form__field">
+        <label>
+          ニックネーム<br>
+          <%= form.text_field :nickname, placeholder: @user.nickname %>
+        </label>
+      </div>
+      
+      <div class="profile-edit__form__field">
+        <label>
+          メールアドレス<br>
+          <%= form.email_field :email, placeholder: @user.email %>
+        </label>
+      </div>
+
+      <%= form.fields_for :profiles do |profile_form| %>
+        <div class="profile-edit__form__field">
+          <label>
+            性別<br>
+            <%= profile_form.text_field :gender, value: @user.profile.gender %>
+          </label>
+        </div>
+
+        <div class="profile-edit__form__field">
+          <label>
+            好きなスポーツ<br>
+            <%= profile_form.text_field :sports, value: @user.profile.sports %>
+          </label>
+        </div>
+
+        <div class="profile-edit__form__field">
+          <label>
+            好きな学問<br>
+            <%= profile_form.text_field :study_fields, value: @user.profile.study_fields %>
+          </label>
+        </div>
+      <% end %>
+
+     <%= form.submit "更新する", id: :"user-btn" %>
+
+    <% end %>
+  </div>
+<% else %>
+  <div class="other-profile">
+    <h1 class="other-profile__head">ニックネーム</h1>
+    <p class="other-profile__detail"><%= @user.nickname %></p>
+  </div>
+  <div class="other-profile">
+    <h1 class="other-profile__head">性別</h1>
+    <p class="other-profile__detail"><%= @user.profile.gender %></p>
+  </div>
+  <div class="other-profile">
+    <h1 class="other-profile__head">好きなスポーツ</h1>
+    <p class="other-profile__detail"><%= @user.profile.sports %></p>
+  </div>
+  <div class="other-profile">
+    <h1 class="other-profile__head">好きな学問</h1>
+    <p class="other-profile__detail"><%= @user.profile.study_fields %></p>
+  </div>
+<% end %>

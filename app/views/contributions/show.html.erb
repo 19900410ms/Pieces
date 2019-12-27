@@ -1,0 +1,61 @@
+<div class="show">
+  <section class="show-contribution" style="background-image: url(<%= @contribution.image %>);">
+    <div class="show-contribution__box">
+      <h1 class="show-contribution__box__title"><%= @contribution.title %></h1>
+      <p class="show-contribution__box__text"><%= simple_format(@contribution.text) %></p>
+    </div>
+  </section>
+
+  <section class="show-detail">
+    <div class="show-detail__box">
+      <div class="show-detail__box__left">
+        <p>投稿者：<%= link_to @contribution.user.nickname, "/users/#{@contribution.user.id}", class: :"show-detail__box__left__name" %></p>
+        <p class="show-detail__box__left__create-date">投稿日時：<%= @contribution.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+      </div>
+      <div class="show-detail__box__right">
+        <p>
+          <% if user_signed_in? && current_user.id != @contribution.user_id %>
+            <%= link_to "#", class: :"show-detail__box__right__like" do %>
+              <i class="far fa-heart like-btn"></i>
+            <% end %>
+            ：●●
+          <% elsif user_signed_in? && current_user.id == @contribution.user_id %>
+            <i class="far fa-heart like-show"></i>
+            ：●●
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <% if user_signed_in? && current_user.id == @contribution.user_id %>
+    <section class="show-edit-destroy">
+      <div class="control-box">
+        <div class="control-box__edit">
+          <%= link_to "/contributions/#{@contribution.id}/edit", class: :"control-box__edit__btn" do %>
+            <h1 class="control-box__edit__btn__text">編集する</h1>
+          <% end %>
+        </div>
+        <div class="control-box__delete">
+          <%= link_to "#", class: :"control-box__delete__btn", method: :delete,data: {confirm: '投稿を削除しますか？'} do %>
+            <h1 class="control-box__delete__btn__text">削除する</h1>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <section class="show-comment">
+    <div class="show-comment__form">
+      <%= form_with(model: @contribution, local: true, class:"show-comment__form__with", method: :put) do |form| %>
+        <%= form.text_area :text %>
+        <%= form.submit "コメントする", id: :"comment-btn" %>
+      <% end %>
+    </div>
+    <div class="show-comment__index">
+      <% 19.times do %>
+        <h1 class="comment">yoooo!!</h1>
+      <% end %>
+    </div>
+  </section>
+</div>

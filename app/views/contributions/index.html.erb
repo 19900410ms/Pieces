@@ -1,0 +1,20 @@
+<%= render partial: "layouts/header" %>
+
+<section class="index">
+  <div class="index-field">
+    <% @contributions.each do |contribution| %>
+      <%= link_to "/contributions/#{contribution.id}", class: :"index-field__box" do %>
+        <div class="index-field__box__image" style="background-image: url(<%= contribution.image %>);">
+          <div class="index-title">
+            <h1 class="index-title__text"><%= contribution.title %></h1>
+          </div>
+          <ul class="index-review">
+            <li class="index-review__list"><i class="far fa-heart"></i>：●●</li>
+            <li class="index-review__list">コメント：●●</li>
+          </ul>
+        </div>
+      <% end %>
+    <%end%>
+    <%= paginate(@contributions) %>
+  </div>
+</section>

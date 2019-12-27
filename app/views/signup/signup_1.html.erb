@@ -1,0 +1,34 @@
+<section class="signup-1">
+  <h1 class="signup-1__title">登録画面</h1>
+  <%= form_with(model: @user, url: signup_2_signup_index_path, method: :get, local: true, class: :"signup-1-form") do |form| %>
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">ニックネーム</h1>
+      <%= form.text_field :nickname, placeholder: "ニックネームを入力してください" %>
+      </label>
+    </div>
+
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">メールアドレス</h1>
+      <%= form.email_field :email, placeholder: "携帯またはパソコンのメールアドレス" %>
+      </label>
+    </div>
+
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">パスワード設定</h1>
+      <%= form.password_field :password, placeholder: "6文字以上" %>
+      </label>
+    </div>
+      
+    <div class="signup-1-form__field">
+      <label>
+      <h1 class="signup-1-form__field__title">パスワード再入力</h1>
+      <%= form.password_field :password_confirmation, placeholder: "確認のため再度入力" %>
+      </label>
+    </div>
+      
+    <%= form.submit "プロフィール設定画面へ", id: :"signup-1-btn" %>
+  <% end %>
+</section>

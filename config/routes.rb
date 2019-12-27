@@ -1,3 +1,17 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: "contributions#top_page"
+  resources :contributions do
+    collection do
+      get :top_page
+    end
+  end
+  resources :signup do
+    collection do
+      get :signup_1
+      get :signup_2
+      get :done
+    end
+  end
+  resources :users, only: [:show, :update]
 end

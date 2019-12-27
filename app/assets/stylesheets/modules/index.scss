@@ -1,0 +1,68 @@
+.index {
+  @include display;
+  background-color: #f5f5f5;
+  padding: 20px 0 0;
+  overflow: scroll;
+  .index-field {
+    height: 100vh;
+    width: 70%;
+    margin: 0 auto;
+    &__box {
+      text-decoration: none;
+      &__image {
+        height: 400px;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 5px;
+        width: 100%;
+        margin: 20px 0;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        .index-title {
+          color: blue;
+          font-size: 20px;
+          height: 30px;
+          line-height: 30px;
+          width: 40%;
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          &__text {
+            font-weight: 700;
+            text-align: center;
+            background-color: rgba(255,255,255,0.8);
+            border: rgb(62, 62, 250)  1px solid;
+            border-radius: 15px;
+            overflow-y: scroll;
+            padding: 0 10px;
+          }
+        }
+        .index-review {
+          color: rgb(235, 153, 2);
+          font-size: 14px;
+          height: 30px;
+          line-height: 30px;
+          position: absolute;
+          bottom: 15px;
+          right: 15px;
+          display: flex;
+          &__list {
+            text-align: center;
+            background-color: rgba(255,255,255,0.8);
+            border: orange  1px solid;
+            border-radius: 15px;
+            padding: 0 10px;
+          }
+          &__list:first-child {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    .pagination {
+      letter-spacing: 1px;
+      padding-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<section class="header">
+  <div class="header__contents">
+    <h1><%= link_to "DaiGo Blog", contributions_path, class: :"header__contents__title" %></h1>
+    <i class="fas fa-align-justify header__contents__icon"></i>
+  </div>
+  <div class="header__nav hide">
+    <ul class="header__nav__block">
+      <% if user_signed_in? %>
+        <%= link_to "/users/#{current_user.id}", class: :"header__nav__block__link" do %>
+          <li>マイページ</li>
+        <% end %>
+        <%= link_to new_contribution_path, class: :"header__nav__block__link" do %>
+          <li>投稿ページ</li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, class: :"header__nav__block__link" do %>
+          <li>ログアウト</li>
+        <% end %>
+      <% else %>
+        <%= link_to "/signup/signup_1", class: :"header__nav__block__link" do %>
+          <li>新規登録</li>
+        <% end %>
+        <%= link_to new_user_session_path, class: :"header__nav__block__link" do %>
+          <li>ログイン</li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</section>

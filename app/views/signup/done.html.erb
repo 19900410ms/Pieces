@@ -1,0 +1,25 @@
+<section class="done">
+  <div class="done__finish">
+    <h1 class="done__finish__registration">ご登録ありがとうございます</h1>
+    <ul class="done__finish__circle">
+      <%= link_to "/users/#{current_user.id}", class: :"done__finish__circle__link" do %>
+       <li class="done__finish__circle__link__list">
+          <h1 class="done__finish__circle__link__list__title">マイページ<h1>
+          <i class="fas fa-dragon done__finish__circle__link__list__icon"></i>
+       </li>
+      <% end %>
+      <%= link_to contributions_path, class: :"done__finish__circle__link" do %>
+        <li class="done__finish__circle__link__list">
+          <h1 class="done__finish__circle__link__list__title">一覧ページ<h1>
+          <i class="fas fa-horse done__finish__circle__link__list__icon"></i>
+        </li>
+      <% end %>
+      <%= link_to new_contribution_path, class: :"done__finish__circle__link" do %>
+        <li class="done__finish__circle__link__list">
+          <h1 class="done__finish__circle__link__list__title">投稿画面<h1>
+          <i class="fas fa-dove done__finish__circle__link__list__icon"></i>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
