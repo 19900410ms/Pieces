@@ -8,19 +8,23 @@
 
   <section class="show-detail">
     <div class="show-detail__box">
-      <p><%= link_to @contribution.user.nickname, user_path, class: :"show-detail__box__name" %></p>
-      <p><%= link_to @contribution.created_at, class: :"show-detail__box__created-date" %></p>
-      <p>
-        <% if user_signed_in? && current_user.id != @contribution.user_id %>
-          <%= link_to "#", class: :"show-detail__box__like" do %>
-            <i class="far fa-heart like-btn"></i>
+      <div class="show-detail__box__left">
+        <p>投稿者：<%= link_to @contribution.user.nickname, "/users/#{@contribution.user.id}", class: :"show-detail__box__left__name" %></p>
+        <p class="show-detail__box__left__create-date">投稿日時：<%= @contribution.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+      </div>
+      <div class="show-detail__box__right">
+        <p>
+          <% if user_signed_in? && current_user.id != @contribution.user_id %>
+            <%= link_to "#", class: :"show-detail__box__right__like" do %>
+              <i class="far fa-heart like-btn"></i>
+            <% end %>
+            ：●●
+          <% elsif user_signed_in? && current_user.id == @contribution.user_id %>
+            <i class="far fa-heart like-show"></i>
             ：●●
           <% end %>
-        <% elsif user_signed_in? && current_user.id == @contribution.user_id %>
-          <i class="far fa-heart like-show"></i>
-          ：●●
-        <% end %>
-      </p>
+        </p>
+      </div>
     </div>
   </section>
 

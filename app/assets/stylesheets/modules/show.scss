@@ -30,6 +30,48 @@
     }
   }
 
+  .show-detail {
+    height: 75px;
+    width: 70%;
+    margin: 0 auto 20px;
+    background-color: white;
+    border: solid 1px rgb(252, 90, 117);
+    border-radius: 5px;
+    &__box {
+      color: rgb(252, 90, 117);
+      font-size: 18px;
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      &__left {
+        margin: auto 0;
+        &__name {
+          color: rgb(252, 90, 117);
+          text-decoration: none;
+        }
+        &__name:hover {
+          color: red;
+        }
+        &__create-date {
+          color: rgb(252, 90, 117);
+          text-decoration: none;
+        }
+      }
+      &__right {
+        margin: auto 0;
+        &__like {
+          font-size: 18px;
+          color: rgb(252, 90, 117);
+          text-decoration: none;
+        }
+        &__like:hover {
+          color: red;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
   .show-edit-destroy {
     height: 35px;
     line-height: 35px;
