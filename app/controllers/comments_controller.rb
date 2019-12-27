@@ -6,8 +6,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    Comment.create(comment_params)
-    redirect_to contributions_path
+    @comment = Comment.create(text: comment_params[:text], contribution_id: comment_params[:contribution_id], user_id: current_user.id)
+    respond_to do |format|
+      format.html { redirect_to contributions_path }
+      format.json { render json: @comment }
+    end
   end
 
   private
