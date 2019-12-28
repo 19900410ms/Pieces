@@ -19,8 +19,12 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like = current_user.likes.find_by(user_id: current_user.id)
+    like = current_user.likes.find_by(user_id: current_user.id, contribution_id: params[:contribution_id])
     like.destroy
+    respond_to do |format|
+      format.html { redirect_to contributions_path }
+      format.json
+    end
   end
 
 end

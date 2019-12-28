@@ -22,6 +22,9 @@
           <% elsif user_signed_in? && current_user.id == @contribution.user_id %>
             <i class="far fa-heart like-show"></i>
             ：<%= @contribution.likes.count %>
+          <% else %>
+            <i class="far fa-heart like-show"></i>
+            ：<%= @contribution.likes.count %>
           <% end %>
         </p>
       </div>
