@@ -1,5 +1,4 @@
 class Contribution < ApplicationRecord
-
   validates :title, :text, presence: true
 
   belongs_to :user
@@ -7,5 +6,4 @@ class Contribution < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   mount_uploader :image, ImageUploader
-  
 end
