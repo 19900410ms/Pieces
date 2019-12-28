@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_20_015533) do
+ActiveRecord::Schema.define(version: 2019_12_27_130028) do
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "contribution_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contribution_id"], name: "index_comments_on_contribution_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "contributions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -20,6 +30,15 @@ ActiveRecord::Schema.define(version: 2019_12_20_015533) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_contributions_on_user_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "contribution_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contribution_id"], name: "index_likes_on_contribution_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -45,6 +64,10 @@ ActiveRecord::Schema.define(version: 2019_12_20_015533) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "contributions"
+  add_foreign_key "comments", "users"
   add_foreign_key "contributions", "users"
+  add_foreign_key "likes", "contributions"
+  add_foreign_key "likes", "users"
   add_foreign_key "profiles", "users"
 end

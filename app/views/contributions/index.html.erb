@@ -9,8 +9,11 @@
             <h1 class="index-title__text"><%= contribution.title %></h1>
           </div>
           <ul class="index-review">
-            <li class="index-review__list"><i class="far fa-heart"></i>：●●</li>
-            <li class="index-review__list">コメント：●●</li>
+            <% if current_user != contribution.user %>
+              <li class="index-review__list"><%= contribution.user.nickname %></li>
+            <% end %>
+            <li class="index-review__list"><i class="far fa-heart"></i>：<%= contribution.likes.count %></li>
+            <li class="index-review__list">コメント：<%= contribution.comments.count %></li>
           </ul>
         </div>
       <% end %>

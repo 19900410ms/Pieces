@@ -15,13 +15,16 @@
       <div class="show-detail__box__right">
         <p>
           <% if user_signed_in? && current_user.id != @contribution.user_id %>
-            <%= link_to "#", class: :"show-detail__box__right__like" do %>
+            <%= link_to contribution_likes_path(@contribution), class: :"show-detail__box__right__like", method: :"post" do %>
               <i class="far fa-heart like-btn"></i>
             <% end %>
-            ：●●
+            ：<%= @contribution.likes.count %>
           <% elsif user_signed_in? && current_user.id == @contribution.user_id %>
             <i class="far fa-heart like-show"></i>
-            ：●●
+            ：<%= @contribution.likes.count %>
+          <% else %>
+            <i class="far fa-heart like-show"></i>
+            ：<%= @contribution.likes.count %>
           <% end %>
         </p>
       </div>
@@ -47,15 +50,26 @@
 
   <section class="show-comment">
     <div class="show-comment__form">
-      <%= form_with(model: @contribution, local: true, class:"show-comment__form__with", method: :put) do |form| %>
-        <%= form.text_area :text %>
+      <%= form_with(model: [@contribution, Comment.new], local: true, class: :"show-comment__form__with") do |form| %>
+        <%= form.text_area :text, class: :"comment-box" %>
         <%= form.submit "コメントする", id: :"comment-btn" %>
       <% end %>
     </div>
     <div class="show-comment__index">
-      <% 19.times do %>
-        <h1 class="comment">yoooo!!</h1>
-      <% end %>
+      <h1 class="show-comment__index__title">＜コメント一覧＞</h1>
+      <div class="show-comment__index__box">
+        <% if @contribution.comments %>
+          <% @contribution.comments.each do |comment| %>
+            <div class="show-comment__index__box__description">
+              <p class="show-comment__index__box__description__name">
+                <%= comment.user.nickname %>
+                <span class="comment-date"><%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></span>
+              </p>
+              <p class="show-comment__index__box__description__text"><%= comment.text %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </section>
 </div>
