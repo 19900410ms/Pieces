@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "contributions#top_page"
   resources :contributions do
     resources :comments, only: :create
-    resources :likes, only: :create
+    resources :likes, only: [:create, :destroy]
     collection do
       get :top_page
     end
