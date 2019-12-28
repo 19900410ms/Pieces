@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+
+  <% unless @contribution.like_user(current_user.id).blank? %>
+    <%= link_to contribution_like_path(contribution_id: @contribution.id, id: @contribution.likes[0].id), class: :"show-detail__box__right__like", method: :delete, remote: true do %>
+      <i class="far fa-heart like-btn", id="likes_buttons_<%= @contribution.id%>"></i>
+    <% end %>
+    ：<%= @contribution.likes.count %>
+  <% else %>
+    <%= link_to contribution_likes_path(@contribution.id), class: :"show-detail__box__right__like", method: :post, remote: true do %>
+      <i class="far fa-heart like-btn", id="likes_buttons_<%= @contribution.id%>"></i>
+    <% end %>
+    ：<%= @contribution.likes.count %>
+  <% end %>
+
+<% else %>
+  <i class="far fa-heart like-show"></i>
+    ：<%= @contribution.likes.count %>
+<% end %>
+
