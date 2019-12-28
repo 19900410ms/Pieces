@@ -16,14 +16,14 @@ class LikesController < ApplicationController
     #binding.pry
     @like = Like.create(user_id: current_user.id, contribution_id: params[:contribution_id])
     @likes = Like.where(contribution_id: params[:contribution_id])
-    @contribution.reload
+    @contributions = Contribution.all
   end
 
   def destroy
     like = Like.find_by(user_id: current_user.id, contribution_id: params[:contribution_id])
     like.destroy
     @likes = Like.where(contribution_id: params[:contribution_id])
-    @contribution.reload
+    @contributions = Contribution.all
   end
 
   private

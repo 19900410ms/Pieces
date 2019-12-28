@@ -64,10 +64,10 @@
           font-size: 18px;
           color: rgb(252, 90, 117);
           text-decoration: none;
-        }
-        &__like:hover {
-          color: red;
-          font-weight: 700;
+          .like-btn:hover {
+            color: red;
+            font-weight: 700;
+          }
         }
       }
     }
