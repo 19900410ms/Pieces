@@ -15,8 +15,8 @@
               <h1 class="user-index-title__text"><%= contribution.title %></h1>
             </div>
             <ul class="user-index-review">
-              <li class="user-index-review__list"><i class="far fa-heart"></i>：●●</li>
-              <li class="user-index-review__list">コメント：●●</li>
+              <li class="user-index-review__list"><i class="far fa-heart"></i>：<%= contribution.likes_count %></li>
+              <li class="user-index-review__list">コメント：<%= contribution.comments.count %></li>
             </ul>
           </div>
         <% end %>
