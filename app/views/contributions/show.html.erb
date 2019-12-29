@@ -38,12 +38,14 @@
   <% end %>
 
   <section class="show-comment">
-    <div class="show-comment__form">
-      <%= form_with(model: [@contribution, Comment.new], local: true, class: :"show-comment__form__with") do |form| %>
-        <%= form.text_area :text, class: :"comment-box" %>
-        <%= form.submit "コメントする", id: :"comment-btn" %>
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="show-comment__form">
+        <%= form_with(model: [@contribution, Comment.new], local: true, class: :"show-comment__form__with") do |form| %>
+          <%= form.text_area :text, class: :"comment-box" %>
+          <%= form.submit "コメントする", id: :"comment-btn" %>
+        <% end %>
+      </div>
+    <% end %>
     <div class="show-comment__index">
       <h1 class="show-comment__index__title">＜コメント一覧＞</h1>
       <div class="show-comment__index__box">

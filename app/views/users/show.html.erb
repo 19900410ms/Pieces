@@ -8,7 +8,7 @@
 
   <section class="user-index">
     <div class="user-index-field">
-      <% @user.contributions.each do |contribution| %>
+      <% @contributions.each do |contribution| %>
         <%= link_to "/contributions/#{contribution.id}", class: :"user-index-field__box" do %>
           <div class="user-index-field__box__image" style="background-image: url(<%= contribution.image %>);">
             <div class="user-index-title">

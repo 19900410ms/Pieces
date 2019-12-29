@@ -22,6 +22,18 @@
             font-size: 50px;
           }
         }
+        #contribution_genre_id {
+          font-size: 18px;
+          height: 30px;
+          width: auto;
+          color: #333;
+          margin-top: 10px;
+        }
+        #contribution_genre_id:hover {
+          font-weight: 500;
+          border: 2px #998bfa solid;
+          border-radius: 5px;
+        }
         #contribution_title {
           font-size: 20px;
           height: 30px;

@@ -57,6 +57,8 @@ Things you may want to cover:
 |title|string|null: false|
 |text|text|null: false|
 |image|string||
+|likes_count|integer||
+|genre_id|integer||
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association

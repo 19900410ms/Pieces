@@ -16,6 +16,7 @@ class ContributionsController < ApplicationController
 
   def create
     @contribution = Contribution.create(contribution_parmas)
+    @contribution.likes_count = 0
     redirect_to contributions_path
   end
 
@@ -45,7 +46,7 @@ class ContributionsController < ApplicationController
   
   private
   def contribution_parmas
-    params.require(:contribution).permit(:title, :image, :text).merge(user_id: current_user.id)
+    params.require(:contribution).permit(:title, :image, :text, :likes_count, :genre_id).merge(user_id: current_user.id)
   end
 
   def set_contribution

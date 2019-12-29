@@ -1,9 +1,15 @@
 <%= form_with(model: @contribution, local: true, class: :"contributin-form") do |form| %>
   <div class="contribution-form__field">
     <label>
-    title <br>
+    genre <br>
+    <%= form.collection_select :genre_id, Genre.all, :id, :name, placeholder: "genre" %>
     </label>
+  </div>
+  <div class="contribution-form__field">
+    <label>
+    title <br>
     <%= form.text_field :title, placeholder: "title" %>
+    </label>
   </div>
   <div class="contribution-form__field file-preview">
     <label>
@@ -15,8 +21,8 @@
   <div class="contribution-form__field">
     <label>
     text<br />
-    </label>
     <%= form.text_area :text, placeholder: "text" %>
+     </label>
   </div>
   <div class="contribution-form__field">
     <%= form.submit "投稿する", id: :"new-edit-btn" %>
