@@ -70,19 +70,24 @@ $(function() {
 
   //fileReader
   var file_field = document.querySelector("input[type=file]")
-
+  
   $('#contribution_image').change(function() {
     var file = $('input[type="file"]').prop('files')[0];
     var fileReader = new FileReader();
     
     fileReader.onloadend = function() {
       var src = fileReader.result;
-      var html = `<img src='${src}' height='200' width="200">`;
+      var html = `<img class="image-preview" src='${src}'>`;
 
       $('.file-preview').after(html);
     }
     fileReader.readAsDataURL(file);
   });
+
+  $(document).on('click', ".image-preview", function() {
+    $(this).remove();
+    file_field.val("");
+  })
 
   //show
   $('.show-contribution').click(function() {

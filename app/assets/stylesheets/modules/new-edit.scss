@@ -70,3 +70,14 @@
     }
   }
 }
+
+.image-preview {
+  height: 200px;
+  width: 220px;
+}
+@media screen and ( max-width:479px ) {
+  .image-preview {
+    height: 200px;
+    width: 50%;
+  }
+}
