@@ -1,5 +1,8 @@
 class LikesController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :find_contribution
+
   def index
     @likes = @like.contribution.includes(:user)
   end
@@ -12,19 +15,20 @@ class LikesController < ApplicationController
   def create
     #binding.pry
     @like = Like.create(user_id: current_user.id, contribution_id: params[:contribution_id])
-    respond_to do |format|
-      format.html { redirect_to contributions_path }
-      format.json
-    end
+    @likes = Like.where(contribution_id: params[:contribution_id])
+    @contributions = Contribution.all
   end
 
   def destroy
-    like = current_user.likes.find_by(user_id: current_user.id, contribution_id: params[:contribution_id])
+    like = Like.find_by(user_id: current_user.id, contribution_id: params[:contribution_id])
     like.destroy
-    respond_to do |format|
-      format.html { redirect_to contributions_path }
-      format.json
-    end
+    @likes = Like.where(contribution_id: params[:contribution_id])
+    @contributions = Contribution.all
+  end
+
+  private
+  def find_contribution
+    @contribution = Contribution.find(params[:contribution_id])
   end
 
 end

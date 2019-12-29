@@ -14,18 +14,7 @@
       </div>
       <div class="show-detail__box__right">
         <p>
-          <% if user_signed_in? && current_user.id != @contribution.user_id %>
-            <%= link_to contribution_likes_path(@contribution), class: :"show-detail__box__right__like", method: :"post" do %>
-              <i class="far fa-heart like-btn"></i>
-            <% end %>
-            ：<%= @contribution.likes.count %>
-          <% elsif user_signed_in? && current_user.id == @contribution.user_id %>
-            <i class="far fa-heart like-show"></i>
-            ：<%= @contribution.likes.count %>
-          <% else %>
-            <i class="far fa-heart like-show"></i>
-            ：<%= @contribution.likes.count %>
-          <% end %>
+          <%= render partial: "likes/like", local: {likes: @likes, contribution: @contribution} %>
         </p>
       </div>
     </div>
