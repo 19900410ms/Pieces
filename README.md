@@ -59,6 +59,7 @@ Things you may want to cover:
 |image|string||
 |likes_count|integer||
 |genre_id|integer||
+|public_id|integer||
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association

@@ -46,7 +46,7 @@ class ContributionsController < ApplicationController
   
   private
   def contribution_parmas
-    params.require(:contribution).permit(:title, :image, :text, :likes_count, :genre_id).merge(user_id: current_user.id)
+    params.require(:contribution).permit(:title, :image, :text, :likes_count, :genre_id, :public_id).merge(user_id: current_user.id)
   end
 
   def set_contribution

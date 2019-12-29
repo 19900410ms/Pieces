@@ -1,26 +1,32 @@
 <%= form_with(model: @contribution, local: true, class: :"contributin-form") do |form| %>
   <div class="contribution-form__field">
     <label>
-    genre <br>
-    <%= form.collection_select :genre_id, Genre.all, :id, :name, placeholder: "genre" %>
+    ジャンル <br>
+    <%= form.collection_select :genre_id, Genre.all, :id, :name %>
     </label>
   </div>
   <div class="contribution-form__field">
     <label>
-    title <br>
+    公開設定 <br>
+    <%= form.collection_select :public_id, Public.all, :id, :name %>
+    </label>
+  </div>
+  <div class="contribution-form__field">
+    <label>
+    タイトル <br>
     <%= form.text_field :title, placeholder: "title" %>
     </label>
   </div>
   <div class="contribution-form__field file-preview">
     <label>
-      Image <br>
+      写真 <br>
       <i class="fas fa-camera-retro picture-icon"></i>
       <%= form.file_field :image %>
     </label>
   </div>
   <div class="contribution-form__field">
     <label>
-    text<br />
+    本文<br />
     <%= form.text_area :text, placeholder: "text" %>
      </label>
   </div>
