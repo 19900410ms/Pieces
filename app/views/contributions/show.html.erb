@@ -1,3 +1,5 @@
+<%= render partial: "layouts/header" %>
+
 <div class="show">
   <section class="show-contribution" style="background-image: url(<%= @contribution.image %>);">
     <div class="show-contribution__box">
@@ -9,7 +11,7 @@
   <section class="show-detail">
     <div class="show-detail__box">
       <div class="show-detail__box__left">
-        <p>投稿者：<%= link_to @contribution.user.nickname, "/users/#{@contribution.user.id}", class: :"show-detail__box__left__name" %></p>
+        <p>投稿者：<%= link_to @contribution.user.nickname, user_path(@contribution.user.id), class: :"show-detail__box__left__name" %></p>
         <p class="show-detail__box__left__create-date">投稿日時：<%= @contribution.created_at.strftime('%Y/%m/%d %H:%M') %></p>
       </div>
       <div class="show-detail__box__right">

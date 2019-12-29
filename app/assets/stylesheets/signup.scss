@@ -1,7 +1,6 @@
 //ユーザー登録ページ
 .signup-1, .signup-2 {
   @include display;
-  background-color: #f5f5f5;
   text-align: center;
   &__title {
     padding: 20px 0 0;
@@ -25,28 +24,21 @@
       }
     }
     #signup-1-btn, #signup-2-btn {
-      font-size: 20px;
-      height: 30px;
-      width: 30%;
-      font-size: 16px;
-      display: block;
-      margin: 30px auto 0;
-      border-radius: 5px;
-      background-color: rgb(241, 180, 241);
-      transition: all ease .5s;
+      @include signup-btn;
     }
     #signup-2-btn {
-      border: springgreen;
-      background-color: springgreen;
+      @include signup-btn;
     }
     #signup-1-btn:hover {
-      border: rgb(241, 180, 241) 1px solid;
-      background-color: white;
+      cursor: pointer;
+      color: white;
+      background-color: black;
     }
     #signup-2-btn:hover {
-      border: springgreen 1px solid;
-      background-color: white;
-    }
+      cursor: pointer;
+      color: white;
+      background-color: black;
+  }
   }
 }
 
@@ -156,7 +148,6 @@
 //ログインページ
 .log-in {
   @include display;
-  background-color: #f5f5f5;
   text-align: center;
   &__title {
     font-size: 20px;
@@ -180,17 +171,7 @@
         margin: 0 0 10px;
       }
       #log-in-btn {
-        height: 30px;
-        width: 30%;
-        margin: 15px 0 0;
-        background-color: white;
-        border: solid black 1px;
-        border-radius: 5px;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        -webkit-transition: all .5s;
-        transition: all .5s;
+        @include signup-btn;
       }
       #log-in-btn:hover {
         cursor: pointer;

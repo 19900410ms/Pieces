@@ -2,8 +2,7 @@
   height: 40px;
   line-height: 40px;
   width: 100vw;
-  background-color: #eee;
-  position: fixed;
+  display: block;
   top: 0;
   z-index: 10;
   &__contents {
@@ -26,8 +25,8 @@
   &__nav {
     height: 40px;
     width: auto;
-    margin: 0 0 20px;
-    background-color: #eee;
+    position: absolute;
+    top: 40px;
     &__block {
       display: flex;
       text-align: center;

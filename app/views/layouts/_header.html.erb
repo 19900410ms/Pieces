@@ -5,8 +5,11 @@
   </div>
   <div class="header__nav hide">
     <ul class="header__nav__block">
+      <%= link_to contributions_path, class: :"header__nav__block__link" do %>
+        <li>DaiGo Blog</li>
+      <% end %>
       <% if user_signed_in? %>
-        <%= link_to "/users/#{current_user.id}", class: :"header__nav__block__link" do %>
+        <%= link_to user_path(id: current_user.id), class: :"header__nav__block__link" do %>
           <li>マイページ</li>
         <% end %>
         <%= link_to new_contribution_path, class: :"header__nav__block__link" do %>
@@ -16,7 +19,7 @@
           <li>ログアウト</li>
         <% end %>
       <% else %>
-        <%= link_to "/signup/signup_1", class: :"header__nav__block__link" do %>
+        <%= link_to  signup_1_signup_index_path, class: :"header__nav__block__link" do %>
           <li>新規登録</li>
         <% end %>
         <%= link_to new_user_session_path, class: :"header__nav__block__link" do %>
