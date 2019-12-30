@@ -1,11 +1,9 @@
 .index {
   @include display;
-  padding: 20px 0 0;
-  overflow: scroll;
   .index-field {
     height: 100vh;
     width: 70%;
-    margin: 0 auto;
+    margin: 10px auto 0;
     &__box {
       text-decoration: none;
       &__image {

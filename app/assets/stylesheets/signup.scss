@@ -1,6 +1,7 @@
 //ユーザー登録ページ
 .signup-1, .signup-2 {
   @include display;
+  height: 100vh;
   text-align: center;
   &__title {
     padding: 20px 0 0;
@@ -46,6 +47,7 @@
 //登録完了ページ
 .done {
   @include display;
+  height: 100vh;
   background: url("roop.jpg") repeat-x;
   background-size: cover;
   animation: bg-slider 20s linear infinite;
@@ -101,6 +103,7 @@
 @media screen and ( max-width:479px ) {
   .done {
     @include display;
+    height: 100vh;
     background: url("roop.jpg") repeat-x;
     background-size: cover;
     animation: bg-slider 20s linear infinite;

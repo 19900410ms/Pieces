@@ -26,7 +26,7 @@
     <section class="show-edit-destroy">
       <div class="control-box">
         <div class="control-box__edit">
-          <%= link_to "/contributions/#{@contribution.id}/edit", class: :"control-box__edit__btn" do %>
+          <%= link_to  edit_contribution_path(@contribution.id), class: :"control-box__edit__btn" do %>
             <h1 class="control-box__edit__btn__text">編集する</h1>
           <% end %>
         </div>
