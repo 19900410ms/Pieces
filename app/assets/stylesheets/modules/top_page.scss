@@ -1,5 +1,6 @@
 .top-page {
   @include display;
+  height: 100vh;
   background: image-url("top_page.jpg");
   background-size: cover;
   text-align: center;

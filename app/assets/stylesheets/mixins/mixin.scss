@@ -1,12 +1,28 @@
 @mixin display {
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 100%;
+  background-color: white;
+  overflow: scroll;
 }
 
 @mixin user-form {
   height: 20px;
   width: 30%;
   padding: 5px;
+}
+
+@mixin signup-btn {
+  height: 30px;
+  width: 30%;
+  margin: 15px 0 0;
+  background-color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
 @keyframes bg-slider {

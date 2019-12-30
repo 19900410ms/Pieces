@@ -1,0 +1,13 @@
+<% @contributions.each do |contribution| %>
+  <%= link_to "/contributions/#{contribution.id}", class: :"user-index-field__box" do %>
+    <div class="user-index-field__box__image" style="background-image: url(<%= contribution.image %>);">
+      <div class="user-index-title">
+        <h1 class="user-index-title__text"><%= contribution.title %></h1>
+      </div>
+      <ul class="user-index-review">
+        <li class="user-index-review__list"><i class="far fa-heart"></i>：<%= contribution.likes_count %></li>
+        <li class="user-index-review__list">コメント：<%= contribution.comments.count %></li>
+      </ul>
+    </div>
+  <% end %>
+<%end%>

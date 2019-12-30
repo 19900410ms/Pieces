@@ -1,3 +1,5 @@
+<%= render partial: "layouts/header" %>
+
 <div class="show">
   <section class="show-contribution" style="background-image: url(<%= @contribution.image %>);">
     <div class="show-contribution__box">
@@ -9,7 +11,7 @@
   <section class="show-detail">
     <div class="show-detail__box">
       <div class="show-detail__box__left">
-        <p>投稿者：<%= link_to @contribution.user.nickname, "/users/#{@contribution.user.id}", class: :"show-detail__box__left__name" %></p>
+        <p>投稿者：<%= link_to @contribution.user.nickname, user_path(@contribution.user.id), class: :"show-detail__box__left__name" %></p>
         <p class="show-detail__box__left__create-date">投稿日時：<%= @contribution.created_at.strftime('%Y/%m/%d %H:%M') %></p>
       </div>
       <div class="show-detail__box__right">
@@ -24,7 +26,7 @@
     <section class="show-edit-destroy">
       <div class="control-box">
         <div class="control-box__edit">
-          <%= link_to "/contributions/#{@contribution.id}/edit", class: :"control-box__edit__btn" do %>
+          <%= link_to  edit_contribution_path(@contribution.id), class: :"control-box__edit__btn" do %>
             <h1 class="control-box__edit__btn__text">編集する</h1>
           <% end %>
         </div>
@@ -38,12 +40,14 @@
   <% end %>
 
   <section class="show-comment">
-    <div class="show-comment__form">
-      <%= form_with(model: [@contribution, Comment.new], local: true, class: :"show-comment__form__with") do |form| %>
-        <%= form.text_area :text, class: :"comment-box" %>
-        <%= form.submit "コメントする", id: :"comment-btn" %>
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="show-comment__form">
+        <%= form_with(model: [@contribution, Comment.new], local: true, class: :"show-comment__form__with") do |form| %>
+          <%= form.text_area :text, class: :"comment-box" %>
+          <%= form.submit "コメントする", id: :"comment-btn" %>
+        <% end %>
+      </div>
+    <% end %>
     <div class="show-comment__index">
       <h1 class="show-comment__index__title">＜コメント一覧＞</h1>
       <div class="show-comment__index__box">

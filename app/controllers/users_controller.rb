@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def show
     @user = User.find(params[:id])
+    @contributions = @user.contributions.all.order("created_at DESC")
   end
 
   def update
