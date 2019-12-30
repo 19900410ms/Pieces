@@ -3,9 +3,11 @@
   .user-show {
     text-align: center;
     &__title {
-      font-size: 24px;
-      font-weight: 700;
-      margin: 10px 0 15px;
+      font-size: 22px;
+      margin: 20px 0 15px;
+      &__top {
+        font-weight: 700;
+      }
     }
     .profile-edit {
       &__form {
@@ -28,16 +30,18 @@
           border-radius: 5px;
           color: white;
           border: white dashed 2px;
-          background-color: rgb(253, 177, 36);
+          background-color: rgb(255, 143, 252);
           margin: 25px auto;
           display: block;
-          box-shadow: 0 0 0 1px rgb(253, 177, 36);
+          box-shadow: 0 0 0 1px rgb(255, 143, 252);
           transition:all .3s ease;
         }
         #user-btn:hover {
+          height: 40px;
+          line-height: 40px;
           font-size: 18px;
           border-style: solid;
-          box-shadow: 0 0 0 3px rgb(253, 177, 36);
+          box-shadow: 0 0 0 3px rgb(255, 143, 252);
         }
       }
     }
