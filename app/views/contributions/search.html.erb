@@ -3,57 +3,51 @@
 <div class="search-result">
   <section class="search">
     <h1 class="search__title">検索画面</h1>
-    <%= search_form_for @q, url: search_contributions_path, action: :search, class: :"search__form", remote: true do |form| %>
-      <div class="search__form__field">
-        <%= form.label :genre_id, "ジャンル" %><br>
+    <%= search_form_for @q, url: search_contributions_path, action: :search, remote: true do |form| %>
+      <div class="search-field">
+        <h1 class="search-field__segment">ジャンル</h1>
           <label>
-            <%= form.radio_button :genre_id_eq, "", {checked: :true} %>指定なし
+            <%= form.radio_button :genre_id_eq, 1 %><span>知識</span>
           </label>
           <label>
-            <%= form.radio_button :genre_id_eq, 1 %>知識
+            <%= form.radio_button :genre_id_eq, 2 %><span>ブログ</span>
           </label>
           <label>
-            <%= form.radio_button :genre_id_eq, 2 %>ブログ
-          </label>
-          <label>
-            <%= form.radio_button :genre_id_eq, 3 %>趣味
+            <%= form.radio_button :genre_id_eq, 3 %><span>趣味</span>
           </label>
       </div>
 
-      <div class="search__form__field">
+      <div class="search-field">
         <label>
-          タイトル <br>
-          <%= form.search_field :title_cont %>
+          <h1 class="search-field__segment">タイトル</h1>
+          <%= form.text_field :title_cont %>
         </label>
       </div>
 
-      <div class="search__form__field">
+      <div class="search-field">
         <label>
-          いいね数 <br>
+          <h1 class="search-field__segment">いいね数</h1>
           <%= form.number_field :likes_count_gteq %> ~
           <%= form.number_field :likes_count_lt %>
         </label>
       </div>
 
-      <div class="search__form__field">
+      <div class="search-field">
         <label>
-          投稿日時 <br>
+          <h1 class="search-field__segment">投稿日時</h1>
           <%= form.date_field :created_at_gteq %> ~
           <%= form.date_field :created_at_lt %>
         </label>
       </div>
 
-      <div class="search__form__field">
+      <div class="search-field">
         <%= form.submit "検索する", id: :"search-btn" %>
       </div>
     <% end %>
   </section>
 
   <section class="index">
-    <div class="index-field">
-      <%= render partial: "contributions/result" %>
-      <%= paginate(@result_contributions) %>
-    </div>
+    <%= render partial: "contributions/result" %>
   </section>
 
 </div>
