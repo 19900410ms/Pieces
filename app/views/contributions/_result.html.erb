@@ -1,0 +1,18 @@
+<% @result_contributions.each do |contribution| %>
+  <% if contribution.public_id != 2 %>
+    <%= link_to contribution_path(id: contribution.id), class: :"index-field__box" do %>
+      <div class="index-field__box__image" style="background-image: url(<%= contribution.image %>);">
+        <div class="index-title">
+          <h1 class="index-title__text"><%= contribution.title %></h1>
+        </div>
+        <ul class="index-review">
+          <% if current_user != contribution.user %>
+            <li class="index-review__list"><%= contribution.user.nickname %></li>
+          <% end %>
+          <li class="index-review__list"><i class="far fa-heart"></i>：<%= contribution.likes_count %></li>
+          <li class="index-review__list">コメント：<%= contribution.comments.count %></li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

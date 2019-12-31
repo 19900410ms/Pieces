@@ -1,0 +1,11 @@
+.search-result {
+  @include display;
+  .search {
+    &__title {
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin: 20px 0 0;
+    }
+  }
+}
