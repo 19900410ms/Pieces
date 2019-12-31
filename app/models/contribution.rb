@@ -10,7 +10,8 @@ class Contribution < ApplicationRecord
   def like_user(user_id)
     likes.find_by(user_id: user_id)
   end
-
+  
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :genre
+  belongs_to_active_hash :public
 end

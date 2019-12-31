@@ -11,10 +11,16 @@
         <%= link_to new_contribution_path, class: :"header__nav__block__link" do %>
           <li>投稿ページ</li>
         <% end %>
+        <%= link_to search_contributions_path, class: :"header__nav__block__link" do %>
+          <li>検索ページ</li>
+        <% end %>
         <%= link_to destroy_user_session_path, method: :delete, class: :"header__nav__block__link" do %>
           <li>ログアウト</li>
         <% end %>
       <% else %>
+        <%= link_to search_contributions_path, class: :"header__nav__block__link" do %>
+          <li>検索ページ</li>
+        <% end %>
         <%= link_to  signup_1_signup_index_path, class: :"header__nav__block__link" do %>
           <li>新規登録</li>
         <% end %>

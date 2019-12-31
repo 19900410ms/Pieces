@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     collection do
       get :top_page
+      get :search
     end
   end
   resources :signup do

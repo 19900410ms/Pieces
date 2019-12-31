@@ -1,0 +1,53 @@
+<%= render partial: "layouts/header" %>
+
+<div class="search-result">
+  <section class="search">
+    <h1 class="search__title">検索画面</h1>
+    <%= search_form_for @q, url: search_contributions_path, action: :search, remote: true do |form| %>
+      <div class="search-field">
+        <h1 class="search-field__segment">ジャンル</h1>
+          <label>
+            <%= form.radio_button :genre_id_eq, 1 %><span>知識</span>
+          </label>
+          <label>
+            <%= form.radio_button :genre_id_eq, 2 %><span>ブログ</span>
+          </label>
+          <label>
+            <%= form.radio_button :genre_id_eq, 3 %><span>趣味</span>
+          </label>
+      </div>
+
+      <div class="search-field">
+        <label>
+          <h1 class="search-field__segment">タイトル</h1>
+          <%= form.text_field :title_cont %>
+        </label>
+      </div>
+
+      <div class="search-field">
+        <label>
+          <h1 class="search-field__segment">いいね数</h1>
+          <%= form.number_field :likes_count_gteq %> ~
+          <%= form.number_field :likes_count_lt %>
+        </label>
+      </div>
+
+      <div class="search-field">
+        <label>
+          <h1 class="search-field__segment">投稿日時</h1>
+          <%= form.date_field :created_at_gteq %> ~
+          <%= form.date_field :created_at_lt %>
+        </label>
+      </div>
+
+      <div class="search-field">
+        <%= form.submit "検索する", id: :"search-btn" %>
+      </div>
+    <% end %>
+  </section>
+
+  <section class="index">
+    <%= render partial: "contributions/result" %>
+  </section>
+
+</div>

@@ -1,6 +1,7 @@
 class ContributionsController < ApplicationController
   
-  before_action :authenticate_user!, except: [:index, :show, :top_page]
+  before_action :authenticate_user!, except: [:index, :show, :top_page, :search]
+ 
   before_action :set_contribution, only: [:show, :edit, :destroy]
   
   def index
@@ -28,7 +29,7 @@ class ContributionsController < ApplicationController
     if contribution.user.id == current_user.id
       contribution.update(contribution_parmas)
     end
-    redirect_to contributions_path
+    redirect_to contribution_path(id: contribution.id)
   end
 
   def destroy
@@ -42,6 +43,11 @@ class ContributionsController < ApplicationController
     if user_signed_in?
       redirect_to contributions_path
     end
+  end
+
+  def search
+    @q = Contribution.ransack(params[:q])
+    @result_contributions = @q.result.order("created_at DESC").page(params[:page]).per(10)
   end
   
   private

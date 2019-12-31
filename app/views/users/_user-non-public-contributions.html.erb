@@ -1,6 +1,6 @@
 <% @contributions.each do |contribution| %>
   <% if contribution.public_id != 2 %>
-    <%= link_to "/contributions/#{contribution.id}", class: :"user-index-field__box" do %>
+    <%= link_to contribution_path(id: contribution.id), class: :"user-index-field__box" do %>
       <div class="user-index-field__box__image" style="background-image: url(<%= contribution.image %>);">
         <div class="user-index-title">
           <h1 class="user-index-title__text"><%= contribution.title %></h1>
