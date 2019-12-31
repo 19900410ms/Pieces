@@ -1,7 +1,6 @@
 class ContributionsController < ApplicationController
   
   before_action :authenticate_user!, except: [:index, :show, :top_page, :search]
- 
   before_action :set_contribution, only: [:show, :edit, :destroy]
   
   def index
