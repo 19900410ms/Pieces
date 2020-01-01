@@ -2,7 +2,7 @@ FactoryBot.define do
   
   factory :contribution do
 
-    id           {Faker::IDNumber}
+    id           { Faker::IDNumber }
     title        {"jQuery"}
     image        {"/public/images/test_image.jpeg"}
     text         {"非同期通信難しい"}
