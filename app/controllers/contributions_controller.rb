@@ -1,6 +1,6 @@
 class ContributionsController < ApplicationController
   
-  before_action :authenticate_user!, except: [:index, :show, :top_page, :search]
+  #before_action :authenticate_user!, except: [:index, :show, :top_page, :search]
   before_action :set_contribution, only: [:show, :edit, :destroy]
   
   def index
@@ -39,9 +39,9 @@ class ContributionsController < ApplicationController
   end
 
   def top_page
-    if user_signed_in?
-      redirect_to contributions_path
-    end
+    #if user_signed_in?
+    #  redirect_to contributions_path
+    #end
   end
 
   def search
