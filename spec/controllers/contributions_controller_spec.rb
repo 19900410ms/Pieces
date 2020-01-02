@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 describe ContributionsController do
+  let(:user) { create(:user) }
 
   describe "GET #index" do
     it "populates an array of contributions ordered by created_at DESC" do
-      user = create(:user)
       contributions = create_list(:contribution, 5)
       get :index
       expect(assigns(:contributions)).to match(contributions.sort{ |a, b| b.created_at <=> a.created_at } )
@@ -17,7 +17,6 @@ describe ContributionsController do
 
   describe "GET #show" do
     it "renders the :show template" do
-      user = create(:user)
       contribution = create(:contribution)
       get :show, params: { id: contribution }
       expect(response).to render_template :show
@@ -30,16 +29,13 @@ describe ContributionsController do
       expect(response).to render_template :new
     end
   end
-
   describe "GET #edit" do
     it "assigns the requested contribution to @contribution" do
-      user = create(:user)
       contribution = create(:contribution)
       get :edit, params: { id: contribution }
       expect(response).to render_template :edit
     end
     it "renders the :edit template" do
-      user = create(:user)
       contribution = create(:contribution)
       get :edit, params: { id: contribution }
       expect(response).to render_template :edit
@@ -52,7 +48,6 @@ describe ContributionsController do
       expect(response).to render_template :top_page
     end
   end
-
   describe "GET #search" do
     it "renders the :search template" do
       get :search
