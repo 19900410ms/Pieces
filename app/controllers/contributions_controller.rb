@@ -60,7 +60,7 @@ class ContributionsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to contribution_path unless current_user == @user.id
+    redirect_to contributions_path unless current_user.id == @contribution.user.id
   end
 
 end
