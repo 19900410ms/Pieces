@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :authenticate_user!, except: [:show]
+  before_action :move_to_index, only: [:update]
 
   def show
     @user = User.find(params[:id])
@@ -22,6 +23,10 @@ class UsersController < ApplicationController
 
   def profile_params
     params.require(:user).require(:profiles).permit(:gender, :sports, :study_fields)
+  end
+
+  def move_to_index
+    redirect_to contribution_path unless current_user == @user.id
   end
 
 end

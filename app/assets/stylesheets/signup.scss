@@ -27,22 +27,26 @@
     #signup-1-btn, #signup-2-btn {
       @include signup-btn;
     }
-    #signup-2-btn {
-      @include signup-btn;
-    }
-    #signup-1-btn:hover {
+    #signup-1-btn:hover, #signup-2-btn:hover {
       cursor: pointer;
       color: white;
       background-color: black;
     }
-    #signup-2-btn:hover {
-      cursor: pointer;
-      color: white;
-      background-color: black;
-  }
   }
 }
-
+//signup_1 submit-btnレスポンシブデザイン
+@media screen and ( max-width:620px ) {
+  #signup-1-btn {
+    @include signup-btn;
+    font-size: 14px;
+  }
+}
+@media screen and ( max-width:540px ) {
+  #signup-1-btn {
+    @include signup-btn;
+    font-size: 12px;
+  }
+}
 
 //登録完了ページ
 .done {
@@ -181,6 +185,19 @@
         color: white;
         background-color: black;
       }
+    }
+  }
+  .to-signup {
+    margin: 40px 0 0;
+    &__btn {
+      @include signup-btn;
+      font-size: 16px;
+      line-height: 30px;
+      margin: 0 auto;
+      display: block;
+      text-decoration: none;
+      color: #333;
+      border: #333 1px solid;
     }
   }
 }

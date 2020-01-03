@@ -5,6 +5,19 @@
   overflow: scroll;
 }
 
+@mixin header-css {
+  height: 40px;
+  line-height: 40px;
+  width: 100vw;
+  color: white;
+  background: image-url("header.png");
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  top: 0;
+  z-index: 10;
+}
+
 @mixin user-form {
   height: 20px;
   width: 30%;

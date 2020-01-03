@@ -2,6 +2,7 @@ class ContributionsController < ApplicationController
   
   before_action :authenticate_user!, except: [:index, :show, :top_page, :search]
   before_action :set_contribution, only: [:show, :edit, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
     @contributions = Contribution.all.order("created_at DESC").page(params[:page]).per(10)
@@ -56,6 +57,10 @@ class ContributionsController < ApplicationController
 
   def set_contribution
     @contribution = Contribution.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to contributions_path unless current_user.id == @contribution.user.id
   end
 
 end
