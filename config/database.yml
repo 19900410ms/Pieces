@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: DaiGo_production
-  username: DaiGo
-  password: <%= ENV['DAIGO_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
