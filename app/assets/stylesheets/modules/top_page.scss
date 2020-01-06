@@ -12,9 +12,10 @@
       letter-spacing: 1px;
     }
     &__message {
+      width: 70%;
       font-weight: 600;
       font-size: 16px;
-      margin: 20px 0;
+      margin: 20px auto;
     }
     &__link {
       a:first-child {
