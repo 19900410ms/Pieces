@@ -8,6 +8,9 @@ set :application, 'Pieces'
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:19900410ms/Pieces.git'
 
+# 使用するbranchを指定。 指定がなければmasterを使う。
+set :branch, 'master'
+
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
@@ -29,6 +32,7 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
-    invoke 'unicorn:restart'
+    invoke 'unicorn:stop'
+    invoke 'unicorn:start'
   end
 end
