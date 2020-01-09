@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def move_to_index
-    redirect_to contribution_path unless current_user == @user.id
+    redirect_to contribution_path unless user_signed_in?
   end
 
 end
