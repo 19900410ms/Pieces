@@ -1,8 +1,8 @@
 # README
 
-## アプリケーション名
-Pieces  
-URL: https://18.177.202.94
+## アプリケーション
+name: Pieces  
+URL:  http://18.177.202.94/
 
 ## 概要
 知識のアウトプット、日々のブログ、趣味の発信ができるサイトとなっております。
@@ -20,6 +20,9 @@ URL: https://18.177.202.94
 ## 開発環境
 - ruby 2.5.1
 - Ruby on Rails 5.2.4.1
+- AWS
+- EC2
+- S3
 
 ## usersテーブル
 |Column|Type|Options|
