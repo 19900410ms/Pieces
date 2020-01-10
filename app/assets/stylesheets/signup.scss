@@ -52,7 +52,7 @@
 .done {
   @include display;
   height: 100vh;
-  background: url("roop.jpg") repeat-x;
+  background: image-url("roop.jpg") repeat-x;
   background-size: cover;
   animation: bg-slider 20s linear infinite;
   text-align: center;

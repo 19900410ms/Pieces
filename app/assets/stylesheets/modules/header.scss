@@ -92,3 +92,9 @@
     }
   }
 }
+
+@media screen and ( max-width:380px ) {
+   .header__nav__block__link {
+     font-size: 10px;
+   }
+}
