@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 
-  <% if current_user.likes.present? %>
+  <% if current_user.likes.find_by(contribution_id: @contribution.id) %>
     <%= link_to contribution_like_path(contribution_id: @contribution.id, id: @contribution.likes[0].id), class: :"show-detail__box__right__like", method: :delete, remote: true do %>
       <i class="far fa-heart like-btn"></i>
       ：<%= @contribution.likes_count %>
