@@ -39,6 +39,7 @@ describe ContributionsController do
       get :edit, params: { id: contribution }
       expect(response).to render_template :edit
     end
+    
     it "renders the :edit template" do
       contribution = create(:contribution)
       get :edit, params: { id: contribution }
