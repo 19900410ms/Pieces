@@ -24,17 +24,22 @@ describe ContributionsController do
   end
 
   describe "GET #new" do
+    before do
+      login user
+    end
     it "renders the :new template" do
       get :new
       expect(response).to render_template :new
     end
   end
+  
   describe "GET #edit" do
     it "assigns the requested contribution to @contribution" do
       contribution = create(:contribution)
       get :edit, params: { id: contribution }
       expect(response).to render_template :edit
     end
+    
     it "renders the :edit template" do
       contribution = create(:contribution)
       get :edit, params: { id: contribution }
@@ -48,6 +53,7 @@ describe ContributionsController do
       expect(response).to render_template :top_page
     end
   end
+  
   describe "GET #search" do
     it "renders the :search template" do
       get :search
