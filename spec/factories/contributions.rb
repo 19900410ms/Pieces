@@ -1,7 +1,6 @@
 FactoryBot.define do
   
   factory :contribution do
-
     id           { Faker::IDNumber }
     title        {"jQuery"}
     image        {"/public/images/test_image.jpeg"}

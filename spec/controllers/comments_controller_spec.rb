@@ -16,7 +16,7 @@ describe CommentsController, type: :controller do
           post :create,
           params: params
         }
-        it 'count up review' do
+        it 'count up comment' do
           expect{ subject }.to change(Comment, :count).by(1)
         end
       end
@@ -26,7 +26,7 @@ describe CommentsController, type: :controller do
           post :create,
           params: invalid_params
         }
-        it 'does not count up review' do
+        it 'does not count up comment' do
           expect{ subject }.not_to change(Comment, :count)
         end
       end

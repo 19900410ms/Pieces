@@ -1,5 +1,4 @@
 FactoryBot.define do
-  
   factory :profile do
     id             { Faker::IDNumber }
     gender         {"男性"}
