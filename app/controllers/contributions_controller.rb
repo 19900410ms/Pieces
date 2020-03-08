@@ -5,7 +5,7 @@ class ContributionsController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
   
   def index
-    @contributions = Contribution.all.order("created_at DESC").page(params[:page]).per(10)
+    @contributions = Contribution.all.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def show
