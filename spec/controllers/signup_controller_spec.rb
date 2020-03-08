@@ -13,7 +13,8 @@ describe SignupController do
   describe "GET #done" do
     it "renders the :done template" do
       user = create(:user)
-      get :done
+      login user
+      get :done, params: { id: user.id }
       expect(response).to render_template :done
     end
   end
